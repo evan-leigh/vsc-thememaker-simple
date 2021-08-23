@@ -1,29 +1,39 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap");
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
   display: grid;
+  font-size: 22px;
   place-items: start;
-  overflow-x: hidden;
-  height: 100vh;
   background: #22252a;
   color: #abb1bf;
 }
 
 body::-webkit-scrollbar {
   width: 10px;
+  background: #282c34;
 }
 
 body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
   background-color: darkgrey;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
@@ -31,9 +41,39 @@ button {
   color: #d5d9e2;
   border: none;
   background-color: #007ee5;
+  font-weight: 500;
+  font-size: 0.8em;
   border: 1px solid #333b47;
   cursor: pointer;
 }
 button:hover {
   background-color: #0d8bf2;
+}
+
+a:focus {
+  outline: none;
+}
+
+#json {
+  position: relative;
+  display: none;
+}
+
+#copy {
+  position: absolute;
+  font-size: 1.2em;
+  z-index: 1;
+  bottom: 0;
+  border: 1px solid #333b47;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  margin: 20px;
+  padding: 0;
+  border-radius: 0px;
+  background-color: #282c34;
+}
+
+.shade {
+  display: none !important;
 }

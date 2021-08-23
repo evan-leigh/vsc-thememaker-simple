@@ -1,32 +1,26 @@
 {
   "$schema": "vscode://schemas/color-theme",
 
-  // Saturated White
-
-  // "White"
-  // "White -2"
-
-  // "Black +4"
-  // "Black +3"
-  // "Black +2"
-  // "Black +1"
-  // "Black"
-  // "Black -1"
-
-  // "Red"
-  // "Green"
-  // "Yellow"
-  // "Orange"
-  // "Blue"
-  // "Magenta"
-  // "Cyan"
-
-  // "Error"
-  // "Warning"
-  // "Modifed"
-  // "Added"
-
-  // Accent Accent
+   // "[White -2]" White -2
+   // "[White]" White
+   // "[Black -1]" Black -1
+   // "[Black +1]" Black +1
+   // "[Black +2]" Black +2
+   // "[Black +3]" Black +3
+   // "[Black +4]" Black +4
+   // "[Black]" Black
+   // "[Red]" Red
+   // "[Green]" Green
+   // "[Yellow]" Yellow
+   // "[Orange]" Orange
+   // "[Blue]" Blue
+   // "[Magenta]" Magenta
+   // "[Cyan]" Cyan
+   // "[Error]" Error
+   // "[Warning]" Warning
+   // "[Modified]" Modified
+   // "[Added]" Added
+   // "[Accent]" Accent
 
   "tokenColors": [
     {
@@ -50,27 +44,27 @@
     {
       "scope": "variable",
       "settings": {
-        "foreground": "Red"
+        "foreground": "[Red]"
       }
     },
 
     {
       "scope": "variable.parameter",
       "settings": {
-        "foreground": "Red"
+        "foreground": "[Red]"
       }
     },
 
     {
       "scope": "variable",
       "settings": {
-        "foreground": "Magenta"
+        "foreground": "[Magenta]"
       }
     },
     {
       "scope": "support.type.property-name.json",
       "settings": {
-        "foreground": "Red"
+        "foreground": "[Red]"
       }
     },
 
@@ -93,211 +87,211 @@
         "entity.other.attribute-name.pcss"
       ],
       "settings": {
-        "foreground": "Cyan"
+        "foreground": "[Cyan]"
       }
     },
     {
       "scope": "variable.other.constant",
       "settings": {
-        "foreground": "Red"
+        "foreground": "[Red]"
       }
     },
     {
       "scope": "storage.modifier.scope",
       "settings": {
         "fontStyle": "",
-        "foreground": "Red"
+        "foreground": "[Red]"
       }
     },
     {
       "scope": "entity.name.tag",
       "settings": {
-        "foreground": "Red"
+        "foreground": "[Red]"
       }
     },
 
     {
       "scope": "variable.other",
       "settings": {
-        "foreground": "Red"
+        "foreground": "[Red]"
       }
     },
 
     {
       "scope": "punctuation.definition.constant",
       "settings": {
-        "foreground": "Orange"
+        "foreground": "[Orange]"
       }
     },
     {
       "scope": "constant.other.color",
       "settings": {
-        "foreground": "Orange"
+        "foreground": "[Orange]"
       }
     },
     {
       "scope": "entity.other.attribute-name.pseudo-class",
       "settings": {
-        "foreground": "Orange"
+        "foreground": "[Orange]"
       }
     },
     {
       "scope": "support.function.auto-event",
       "settings": {
-        "foreground": "Yellow"
+        "foreground": "[Yellow]"
       }
     },
     {
       "scope": "entity.other.attribute-name.class",
       "settings": {
-        "foreground": "Orange"
+        "foreground": "[Orange]"
       }
     },
     {
       "scope": "support.constant",
       "settings": {
-        "foreground": "Cyan"
+        "foreground": "[Cyan]"
       }
     },
 
     {
       "scope": "support.function",
       "settings": {
-        "foreground": "Magenta"
+        "foreground": "[Magenta]"
       }
     },
 
     {
       "scope": "entity.name.function",
       "settings": {
-        "foreground": "Blue"
+        "foreground": "[Blue]"
       }
     },
 
     {
       "scope": "constant.language.boolean",
       "settings": {
-        "foreground": "Cyan"
+        "foreground": "[Cyan]"
       }
     },
 
     {
       "scope": "constant.character",
       "settings": {
-        "foreground": "Blue"
+        "foreground": "[Blue]"
       }
     },
 
     {
       "scope": "meta.object-literal",
       "settings": {
-        "foreground": "White -2"
+        "foreground": "[White -2]"
       }
     },
     {
       "scope": "support.variable.option",
       "settings": {
-        "foreground": "Yellow"
+        "foreground": "[Yellow]"
       }
     },
     {
       "scope": "punctuation.definition.bracket",
       "settings": {
-        "foreground": "White -2"
+        "foreground": "[White -2]"
       }
     },
     {
       "scope": "punctuation",
       "settings": {
-        "foreground": "White -2"
+        "foreground": "[White -2]"
       }
     },
     {
       "scope": "support.function.command",
       "settings": {
         "fontStyle": "italic",
-        "foreground": "Magenta"
+        "foreground": "[Magenta]"
       }
     },
     {
       "scope": "support.constant.attribute",
       "settings": {
-        "foreground": "Yellow"
+        "foreground": "[Yellow]"
       }
     },
     {
       "scope": "support.type.group",
       "settings": {
-        "foreground": "White -2"
+        "foreground": "[White -2]"
       }
     },
     {
       "scope": "entity.name",
       "settings": {
-        "foreground": "Yellow"
+        "foreground": "[Yellow]"
       }
     },
 
     {
       "scope": "variable.language.this",
       "settings": {
-        "foreground": "Yellow"
+        "foreground": "[Yellow]"
       }
     },
 
     {
       "scope": "entity.name",
       "settings": {
-        "foreground": "Yellow"
+        "foreground": "[Yellow]"
       }
     },
 
     {
       "scope": "constant.language",
       "settings": {
-        "foreground": "Yellow"
+        "foreground": "[Yellow]"
       }
     },
 
     {
       "scope": "constant.language.null",
       "settings": {
-        "foreground": "Orange"
+        "foreground": "[Orange]"
       }
     },
 
     {
       "scope": "support.class",
       "settings": {
-        "foreground": "Blue"
+        "foreground": "[Blue]"
       }
     },
 
     {
       "scope": "markup.heading, markup.bold",
       "settings": {
-        "foreground": "Yellow"
+        "foreground": "[Yellow]"
       }
     },
 
     {
       "scope": "markup.fenced_code.block.markdown",
       "settings": {
-        "foreground": "Blue"
+        "foreground": "[Blue]"
       }
     },
 
     {
       "scope": "markup.underline",
       "settings": {
-        "foreground": "Blue"
+        "foreground": "[Blue]"
       }
     },
 
     {
       "scope": "keyword.other.unit",
       "settings": {
-        "foreground": "Orange",
+        "foreground": "[Orange]",
         "fontStyle": ""
       }
     },
@@ -305,21 +299,21 @@
     {
       "scope": "support.type",
       "settings": {
-        "foreground": "Blue"
+        "foreground": "[Blue]"
       }
     },
 
     {
       "scope": "constant.numeric",
       "settings": {
-        "foreground": "Orange"
+        "foreground": "[Orange]"
       }
     },
 
     {
       "scope": "entity.other.attribute-name",
       "settings": {
-        "foreground": "Yellow",
+        "foreground": "[Yellow]",
         "fontStyle": "italic"
       }
     },
@@ -327,41 +321,41 @@
     {
       "scope": "meta.function-call.generic",
       "settings": {
-        "foreground": "Blue"
+        "foreground": "[Blue]"
       }
     },
 
     {
       "scope": "entity.other.attribute-name.id.",
       "settings": {
-        "foreground": "Blue"
+        "foreground": "[Blue]"
       }
     },
     {
       "scope": "support.function",
       "settings": {
-        "foreground": "Blue"
+        "foreground": "[Blue]"
       }
     },
 
     {
       "scope": "constant.language.json",
       "settings": {
-        "foreground": "Orange"
+        "foreground": "[Orange]"
       }
     },
 
     {
       "scope": "keyword.operator",
       "settings": {
-        "foreground": "White -2"
+        "foreground": "[White -2]"
       }
     },
 
     {
       "scope": "comment.line, comment.block, punctuation.definition.comment",
       "settings": {
-        "foreground": "Black +4"
+        "foreground": "[Black +4]"
       }
     },
 
@@ -382,7 +376,7 @@
     {
       "scope": "meta.resultLinePrefix.lineNumber",
       "settings": {
-        "foreground": "White -2"
+        "foreground": "[White -2]"
       }
     },
 
@@ -396,14 +390,14 @@
     {
       "scope": "punctuation.section.embedded",
       "settings": {
-        "foreground": "White -2"
+        "foreground": "[White -2]"
       }
     },
 
     {
       "scope": "storage.modifier",
       "settings": {
-        "foreground": "Magenta",
+        "foreground": "[Magenta]",
         "fontStyle": "italic"
       }
     },
@@ -411,7 +405,7 @@
     {
       "scope": "punctuation.definition.directive",
       "settings": {
-        "foreground": "Magenta",
+        "foreground": "[Magenta]",
         "fontStyle": "italic"
       }
     },
@@ -419,7 +413,7 @@
     {
       "scope": "storage.type.function.arrow",
       "settings": {
-        "foreground": "Magenta",
+        "foreground": "[Magenta]",
         "fontStyle": ""
       }
     },
@@ -427,7 +421,7 @@
     {
       "scope": "storage.type",
       "settings": {
-        "foreground": "Magenta",
+        "foreground": "[Magenta]",
         "fontStyle": "italic"
       }
     },
@@ -435,14 +429,14 @@
     {
       "scope": "keyword.operator.logical",
       "settings": {
-        "foreground": "Magenta"
+        "foreground": "[Magenta]"
       }
     },
 
     {
       "scope": "keyword.control.flow",
       "settings": {
-        "foreground": "Magenta",
+        "foreground": "[Magenta]",
         "fontStyle": "italic"
       }
     },
@@ -450,7 +444,7 @@
     {
       "scope": "keyword.control",
       "settings": {
-        "foreground": "Magenta",
+        "foreground": "[Magenta]",
         "fontStyle": "italic"
       }
     },
@@ -458,7 +452,7 @@
     {
       "scope": "variable.object.property",
       "settings": {
-        "foreground": "Magenta",
+        "foreground": "[Magenta]",
         "fontStyle": "italic"
       }
     },
@@ -466,7 +460,7 @@
     {
       "scope": "keyword.operator.new",
       "settings": {
-        "foreground": "Magenta",
+        "foreground": "[Magenta]",
         "fontStyle": "italic"
       }
     },
@@ -474,7 +468,7 @@
     {
       "scope": "keyword.control.conditional",
       "settings": {
-        "foreground": "Magenta",
+        "foreground": "[Magenta]",
         "fontStyle": "italic"
       }
     },
@@ -482,7 +476,7 @@
     {
       "scope": "entity.other.attribute-name.pseudo-element",
       "settings": {
-        "foreground": "Magenta",
+        "foreground": "[Magenta]",
         "fontStyle": "italic"
       }
     },
@@ -490,20 +484,20 @@
       "scope": "storage.function",
       "settings": {
         "fontStyle": "italic",
-        "foreground": "Magenta"
+        "foreground": "[Magenta]"
       }
     },
     {
       "scope": "keyword.other.important",
       "settings": {
-        "foreground": "Yellow"
+        "foreground": "[Yellow]"
       }
     },
 
     {
       "scope": "keyword.control.import, keyword.control.export",
       "settings": {
-        "foreground": "Magenta",
+        "foreground": "[Magenta]",
         "fontStyle": "italic"
       }
     },
@@ -511,66 +505,66 @@
     {
       "scope": "punctuation.definition.block.tag",
       "settings": {
-        "foreground": "Magenta"
+        "foreground": "[Magenta]"
       }
     },
 
     {
       "scope": "keyword.other.important",
       "settings": {
-        "foreground": "Magenta"
+        "foreground": "[Magenta]"
       }
     },
 
     {
       "scope": "keyword.other",
       "settings": {
-        "foreground": "Magenta",
+        "foreground": "[Magenta]",
         "fontStyle": "italic"
       }
     },
     {
       "scope": "punctuation.definition.keyword",
       "settings": {
-        "foreground": "Magenta"
+        "foreground": "[Magenta]"
       }
     },
     {
       "scope": "support.function.viml",
       "settings": {
-        "foreground": "Magenta"
+        "foreground": "[Magenta]"
       }
     },
     {
       "scope": "constant.other.character-class",
       "settings": {
-        "foreground": "Blue"
+        "foreground": "[Blue]"
       }
     },
     {
       "scope": "punctuation.definition.decorator",
       "settings": {
-        "foreground": "Blue"
+        "foreground": "[Blue]"
       }
     },
     {
       "scope": "string",
       "settings": {
-        "foreground": "Green"
+        "foreground": "[Green]"
       }
     },
 
     {
       "scope": "variable.other.readwrite",
       "settings": {
-        "foreground": "Red"
+        "foreground": "[Red]"
       }
     },
 
     {
       "scope": "variable.other.object",
       "settings": {
-        "foreground": "Yellow",
+        "foreground": "[Yellow]",
         "fontStyle": "italic"
       }
     },
@@ -578,7 +572,7 @@
     {
       "scope": "variable.other.object.property",
       "settings": {
-        "foreground": "Blue",
+        "foreground": "[Blue]",
         "fontStyle": ""
       }
     },
@@ -586,332 +580,332 @@
     {
       "scope": "punctuation.definition.template-expression",
       "settings": {
-        "foreground": "Blue"
+        "foreground": "[Blue]"
       }
     },
 
     {
       "scope": "punctuation.definition.string",
       "settings": {
-        "foreground": "Green"
+        "foreground": "[Green]"
       }
     },
 
     {
       "scope": "support.type.property-name",
       "settings": {
-        "foreground": "White -2"
+        "foreground": "[White -2]"
       }
     },
 
     {
       "scope": "support.variable.option.viml",
       "settings": {
-        "foreground": "White -2"
+        "foreground": "[White -2]"
       }
     },
     {
       "scope": "meta.object-literal.key",
       "settings": {
-        "foreground": "Red"
+        "foreground": "[Red]"
       }
     },
 
     {
       "scope": "punctuation.support.type.property-name",
       "settings": {
-        "foreground": "Red"
+        "foreground": "[Red]"
       }
     },
     {
       "scope": "support.type.property-name.media",
       "settings": {
-        "foreground": "Red"
+        "foreground": "[Red]"
       }
     }
   ],
 
   "colors": {
-    "activityBar.activeBackground": "Black -1",
-    "activityBar.activeBorder": "Accent",
-    "activityBar.activeFocusBorder": "Black +2",
-    "activityBar.background": "Black -1",
-    "activityBar.border": "Black +2",
-    "activityBar.dropBorder": "Black +340",
-    "activityBar.foreground": "White -2",
-    "activityBar.inactiveForeground": "Black +3",
-    "activityBarBadge.background": "Accent",
-    "activityBarBadge.foreground": "White",
-    "badge.background": "Accent",
-    "badge.foreground": "White",
-    "banner.background": "Black -1",
-    "banner.foreground": "White -2",
-    "banner.iconForeground": "White",
-    "breadcrumb.activeSelectionForeground": "White -2",
-    "breadcrumb.background": "Black",
-    "breadcrumb.focusForeground": "White",
-    "breadcrumb.foreground": "White -2",
-    "breadcrumbPicker.background": "Black -1",
-    "button.background": "Accent",
+    "activityBar.activeBackground": "[Black -1]",
+    "activityBar.activeBorder": "[Accent]",
+    "activityBar.activeFocusBorder": "[Black +2]",
+    "activityBar.background": "[Black -1]",
+    "activityBar.border": "[Black +2]",
+    "activityBar.dropBorder": "[Black +3]40",
+    "activityBar.foreground": "[White -2]",
+    "activityBar.inactiveForeground": "[Black +3]",
+    "activityBarBadge.background": "[Accent]",
+    "activityBarBadge.foreground": "[White]",
+    "badge.background": "[Accent]",
+    "badge.foreground": "[White]",
+    "banner.background": "[Black -1]",
+    "banner.foreground": "[White -2]",
+    "banner.iconForeground": "[White]",
+    "breadcrumb.activeSelectionForeground": "[White -2]",
+    "breadcrumb.background": "[Black]",
+    "breadcrumb.focusForeground": "[White]",
+    "breadcrumb.foreground": "[White -2]",
+    "breadcrumbPicker.background": "[Black -1]",
+    "button.background": "[Accent]",
     "button.border": "#0000",
-    "button.foreground": "White",
+    "button.foreground": "[White]",
     "button.hoverBackground": "#0D8BF2",
-    "button.secondaryBackground": "Black +2",
-    "button.secondaryForeground": "White",
-    "button.secondaryHoverBackground": "Black +3",
-    "charts.blue": "Blue",
-    "charts.foreground": "White -2",
-    "charts.green": "Green",
-    "charts.lines": "White -2",
-    "charts.orange": "Orange",
-    "charts.purple": "Magenta",
-    "charts.red": "Red",
-    "charts.yellow": "Yellow",
-    "checkbox.background": "Black -1",
-    "checkbox.border": "White -240",
-    "checkbox.foreground": "White",
-    "debugToolBar.border": "Black +2",
-    "debugConsole.errorForeground": "Error",
-    "debugConsole.infoForeground": "Blue",
-    "debugConsole.sourceForeground": "White -2",
-    "debugConsole.warningForeground": "Warning",
-    "debugConsoleInputIcon.foreground": "White -2",
-    "debugExceptionWidget.background": "Red",
-    "debugExceptionWidget.border": "Red",
-    "debugIcon.breakpointCurrentStackframeForeground": "Yellow",
-    "debugIcon.breakpointDisabledForeground": "Black +4",
-    "debugIcon.breakpointForeground": "Red",
-    "debugIcon.breakpointStackframeForeground": "Green",
-    "debugIcon.breakpointUnverifiedForeground": "White -2",
-    "debugIcon.continueForeground": "Blue",
-    "debugIcon.disconnectForeground": "Orange",
-    "debugIcon.pauseForeground": "Blue",
-    "debugIcon.restartForeground": "Green",
-    "debugIcon.startForeground": "Green",
-    "debugIcon.stepBackForeground": "Blue",
-    "debugIcon.stepIntoForeground": "Blue",
-    "debugIcon.stepOutForeground": "Blue",
-    "debugIcon.stepOverForeground": "Blue",
-    "debugIcon.stopForeground": "Orange",
-    "debugTokenExpression.boolean": "Cyan",
-    "debugTokenExpression.error": "Error",
-    "debugTokenExpression.name": "Magenta",
-    "debugTokenExpression.number": "Orange",
-    "debugTokenExpression.string": "Green",
-    "debugTokenExpression.value": "White -2",
-    "debugToolBar.background": "Black -1",
-    "debugView.exceptionLabelBackground": "Red",
-    "debugView.exceptionLabelForeground": "White -2",
-    "debugView.stateLabelBackground": "Black +4",
-    "debugView.stateLabelForeground": "White -2",
-    "debugView.valueChangedHighlight": "Blue",
-    "descriptionForeground": "White -2",
-    "diffEditor.border": "Black +2",
-    "diffEditor.diagonalFill": "Saturated White33",
+    "button.secondaryBackground": "[Black +2]",
+    "button.secondaryForeground": "[White]",
+    "button.secondaryHoverBackground": "[Black +3]",
+    "charts.blue": "[Blue]",
+    "charts.foreground": "[White -2]",
+    "charts.green": "[Green]",
+    "charts.lines": "[White -2]",
+    "charts.orange": "[Orange]",
+    "charts.purple": "[Magenta]",
+    "charts.red": "[Red]",
+    "charts.yellow": "[Yellow]",
+    "checkbox.background": "[Black -1]",
+    "checkbox.border": "[White -2]40",
+    "checkbox.foreground": "[White]",
+    "debugToolBar.border": "[Black +2]",
+    "debugConsole.errorForeground": "[Error]",
+    "debugConsole.infoForeground": "[Blue]",
+    "debugConsole.sourceForeground": "[White -2]",
+    "debugConsole.warningForeground": "[Warning]",
+    "debugConsoleInputIcon.foreground": "[White -2]",
+    "debugExceptionWidget.background": "[Red]",
+    "debugExceptionWidget.border": "[Red]",
+    "debugIcon.breakpointCurrentStackframeForeground": "[Yellow]",
+    "debugIcon.breakpointDisabledForeground": "[Black +4]",
+    "debugIcon.breakpointForeground": "[Red]",
+    "debugIcon.breakpointStackframeForeground": "[Green]",
+    "debugIcon.breakpointUnverifiedForeground": "[White -2]",
+    "debugIcon.continueForeground": "[Blue]",
+    "debugIcon.disconnectForeground": "[Orange]",
+    "debugIcon.pauseForeground": "[Blue]",
+    "debugIcon.restartForeground": "[Green]",
+    "debugIcon.startForeground": "[Green]",
+    "debugIcon.stepBackForeground": "[Blue]",
+    "debugIcon.stepIntoForeground": "[Blue]",
+    "debugIcon.stepOutForeground": "[Blue]",
+    "debugIcon.stepOverForeground": "[Blue]",
+    "debugIcon.stopForeground": "[Orange]",
+    "debugTokenExpression.boolean": "[Cyan]",
+    "debugTokenExpression.error": "[Error]",
+    "debugTokenExpression.name": "[Magenta]",
+    "debugTokenExpression.number": "[Orange]",
+    "debugTokenExpression.string": "[Green]",
+    "debugTokenExpression.value": "[White -2]",
+    "debugToolBar.background": "[Black -1]",
+    "debugView.exceptionLabelBackground": "[Red]",
+    "debugView.exceptionLabelForeground": "[White -2]",
+    "debugView.stateLabelBackground": "[Black +4]",
+    "debugView.stateLabelForeground": "[White -2]",
+    "debugView.valueChangedHighlight": "[Blue]",
+    "descriptionForeground": "[White -2]",
+    "diffEditor.border": "[Black +2]",
+    "diffEditor.diagonalFill": "[White]33",
     "diffEditor.insertedTextBackground": "#8EFF3D12",
     "diffEditor.removedTextBackground": "#FF4D5B12",
     "dropdown.background": "#32353B",
-    "dropdown.border": "Black +2",
-    "dropdown.foreground": "White -2",
-    "dropdown.listBackground": "Black -1",
-    "editor.background": "Black",
-    "editor.findMatchBackground": "Saturated White40",
-    "editor.findMatchHighlightBackground": "Saturated White10",
-    "editor.findRangeHighlightBackground": "Saturated White10",
-    "editor.focusedStackFrameHighlightBackground": "Green",
-    "editor.foldBackground": "Black +1",
-    "editor.foreground": "White -2",
-    "editor.hoverHighlightBackground": "Saturated White10",
-    "editor.inactiveSelectionBackground": "Saturated White0F",
-    "editor.inlineValuesBackground": "Orange66",
-    "editor.inlineValuesForeground": "White80",
-    "editor.lineHighlightBackground": "Black +1",
-    "editor.lineHighlightBorder": "Black +1",
-    "editor.linkedEditingBackground": "Red80",
-    "editor.rangeHighlightBackground": "Saturated White10",
+    "dropdown.border": "[Black +2]",
+    "dropdown.foreground": "[White -2]",
+    "dropdown.listBackground": "[Black -1]",
+    "editor.background": "[Black]",
+    "editor.findMatchBackground": "[White]40",
+    "editor.findMatchHighlightBackground": "[White]10",
+    "editor.findRangeHighlightBackground": "[White]10",
+    "editor.focusedStackFrameHighlightBackground": "[Green]",
+    "editor.foldBackground": "[Black +1]",
+    "editor.foreground": "[White -2]",
+    "editor.hoverHighlightBackground": "[White]10",
+    "editor.inactiveSelectionBackground": "[White]0F",
+    "editor.inlineValuesBackground": "[Orange]66",
+    "editor.inlineValuesForeground": "[White]80",
+    "editor.lineHighlightBackground": "[Black +1]",
+    "editor.lineHighlightBorder": "[Black +1]",
+    "editor.linkedEditingBackground": "[Red]80",
+    "editor.rangeHighlightBackground": "[White]10",
     "editor.rangeHighlightBorder": "#0000",
-    "editor.selectionBackground": "Saturated White10",
-    "editor.selectionHighlightBackground": "Saturated White10",
-    "editor.snippetFinalTabstopHighlightBackground": "Saturated White4d",
-    "editor.snippetFinalTabstopHighlightBorder": "Saturated White80",
-    "editor.snippetTabstopHighlightBackground": "White -24d",
-    "editor.stackFrameHighlightBackground": "Yellow80",
-    "editor.symbolHighlightBackground": "Black +2",
-    "editor.wordHighlightBackground": "Saturated White10",
-    "editor.wordHighlightStrongBackground": "Saturated White10",
-    "editorActiveLineNumber.foreground": "White -2",
+    "editor.selectionBackground": "[White]10",
+    "editor.selectionHighlightBackground": "[White]10",
+    "editor.snippetFinalTabstopHighlightBackground": "[White]4d",
+    "editor.snippetFinalTabstopHighlightBorder": "[White]80",
+    "editor.snippetTabstopHighlightBackground": "[White -2]4d",
+    "editor.stackFrameHighlightBackground": "[Yellow]80",
+    "editor.symbolHighlightBackground": "[Black +2]",
+    "editor.wordHighlightBackground": "[White]10",
+    "editor.wordHighlightStrongBackground": "[White]10",
+    "editorActiveLineNumber.foreground": "[Black +4]",
     "editorBracketMatch.background": "#0000",
-    "editorBracketMatch.border": "Saturated White40",
-    "editorCodeLens.foreground": "White -2",
-    "editorCursor.background": "White",
-    "editorCursor.foreground": "Accent",
+    "editorBracketMatch.border": "[White]40",
+    "editorCodeLens.foreground": "[White -2]",
+    "editorCursor.background": "[White]",
+    "editorCursor.foreground": "[Accent]",
     "editorError.background": "#0000",
-    "editorError.foreground": "Error",
+    "editorError.foreground": "[Error]",
     "editorGhostText.border": "#0000",
-    "editorGhostText.foreground": "Black +4",
-    "editorGroup.border": "Black +2",
-    "editorGroup.dropBackground": "Black +340",
-    "editorGroup.emptyBackground": "Black -1",
-    "editorGroupHeader.border": "Black +2",
-    "editorGroupHeader.noTabsBackground": "Black -1",
-    "editorGroupHeader.tabsBackground": "Black -1",
-    "editorGroupHeader.tabsBorder": "Black +2",
-    "editorGutter.addedBackground": "Added80",
-    "editorGutter.background": "Black",
-    "editorGutter.commentRangeForeground": "White -2",
-    "editorGutter.deletedBackground": "Red80",
-    "editorGutter.foldingControlForeground": "Black +4",
-    "editorGutter.modifiedBackground": "Modified80",
-    "editorHint.foreground": "White -2",
-    "editorHoverWidget.background": "Black -1",
-    "editorHoverWidget.border": "Black +2",
-    "editorHoverWidget.foreground": "White -2",
-    "editorHoverWidget.statusBarBackground": "Black +2",
-    "editorIndentGuide.activeBackground": "Saturated White40",
-    "editorIndentGuide.background": "Saturated White20",
-    "editorInfo.foreground": "Blue",
-    "editorInlayHint.background": "WhiteF2",
-    "editorInlayHint.foreground": "Accentcc",
-    "editorLightBulb.foreground": "Yellow",
-    "editorLightBulbAutoFix.foreground": "Blue",
-    "editorLineNumber.activeForeground": "White -2",
-    "editorLineNumber.foreground": "Black +4",
-    "editorLink.activeForeground": "Blue",
-    "editorMarkerNavigation.background": "Black -1",
-    "editorMarkerNavigationError.background": "Error",
-    "editorMarkerNavigationInfo.background": "Blue",
-    "editorMarkerNavigationWarning.background": "Warning",
-    "editorOverviewRuler.addedForeground": "Added80",
-    "editorOverviewRuler.background": "Black",
-    "editorOverviewRuler.border": "Black +2",
-    "editorOverviewRuler.bracketMatchForeground": "White -2",
-    "editorOverviewRuler.commonContentForeground": "Saturated White40",
-    "editorOverviewRuler.currentContentForeground": "Cyan",
-    "editorOverviewRuler.deletedForeground": "Red80",
-    "editorOverviewRuler.errorForeground": "Error80",
-    "editorOverviewRuler.findMatchForeground": "Black +2",
-    "editorOverviewRuler.incomingContentForeground": "Blue80",
-    "editorOverviewRuler.infoForeground": "Blue",
-    "editorOverviewRuler.modifiedForeground": "Modified80",
-    "editorOverviewRuler.rangeHighlightForeground": "Saturated White60",
-    "editorOverviewRuler.selectionHighlightForeground": "Saturated White60",
-    "editorOverviewRuler.warningForeground": "Warning80",
-    "editorOverviewRuler.wordHighlightForeground": "Saturated White60",
-    "editorOverviewRuler.wordHighlightStrongForeground": "Saturated White60",
-    "editorPane.background": "Black -1",
-    "editorRuler.foreground": "White -2",
-    "editorSuggestWidget.background": "Black -1",
-    "editorSuggestWidget.border": "Black +2",
-    "editorSuggestWidget.focusHighlightForeground": "Accent",
-    "editorSuggestWidget.foreground": "White -2",
-    "editorSuggestWidget.highlightForeground": "Accent",
-    "editorSuggestWidget.selectedBackground": "Black",
-    "editorSuggestWidget.selectedForeground": "White",
-    "editorSuggestWidget.selectedIconForeground": "White",
+    "editorGhostText.foreground": "[Black +4]",
+    "editorGroup.border": "[Black +2]",
+    "editorGroup.dropBackground": "[Black +3]40",
+    "editorGroup.emptyBackground": "[Black -1]",
+    "editorGroupHeader.border": "[Black +2]",
+    "editorGroupHeader.noTabsBackground": "[Black -1]",
+    "editorGroupHeader.tabsBackground": "[Black -1]",
+    "editorGroupHeader.tabsBorder": "[Black +2]",
+    "editorGutter.addedBackground": "[Added]80",
+    "editorGutter.background": "[Black]",
+    "editorGutter.commentRangeForeground": "[White -2]",
+    "editorGutter.deletedBackground": "[Red]80",
+    "editorGutter.foldingControlForeground": "[Black +4]",
+    "editorGutter.modifiedBackground": "[Modified]80",
+    "editorHint.foreground": "[White -2]",
+    "editorHoverWidget.background": "[Black -1]",
+    "editorHoverWidget.border": "[Black +2]",
+    "editorHoverWidget.foreground": "[White -2]",
+    "editorHoverWidget.statusBarBackground": "[Black +2]",
+    "editorIndentGuide.activeBackground": "[White]40",
+    "editorIndentGuide.background": "[White]20",
+    "editorInfo.foreground": "[Blue]",
+    "editorInlayHint.background": "[White]F2",
+    "editorInlayHint.foreground": "[Accent]cc",
+    "editorLightBulb.foreground": "[Yellow]",
+    "editorLightBulbAutoFix.foreground": "[Blue]",
+    "editorLineNumber.activeForeground": "[White]",
+    "editorLineNumber.foreground": "[White -2]",
+    "editorLink.activeForeground": "[Blue]",
+    "editorMarkerNavigation.background": "[Black -1]",
+    "editorMarkerNavigationError.background": "[Error]",
+    "editorMarkerNavigationInfo.background": "[Blue]",
+    "editorMarkerNavigationWarning.background": "[Warning]",
+    "editorOverviewRuler.addedForeground": "[Added]80",
+    "editorOverviewRuler.background": "[Black]",
+    "editorOverviewRuler.border": "[Black +2]",
+    "editorOverviewRuler.bracketMatchForeground": "[White -2]",
+    "editorOverviewRuler.commonContentForeground": "[White]40",
+    "editorOverviewRuler.currentContentForeground": "[Cyan]",
+    "editorOverviewRuler.deletedForeground": "[Red]80",
+    "editorOverviewRuler.errorForeground": "[Error]80",
+    "editorOverviewRuler.findMatchForeground": "[Black +2]",
+    "editorOverviewRuler.incomingContentForeground": "[Blue]80",
+    "editorOverviewRuler.infoForeground": "[Blue]",
+    "editorOverviewRuler.modifiedForeground": "[Modified]80",
+    "editorOverviewRuler.rangeHighlightForeground": "[White]60",
+    "editorOverviewRuler.selectionHighlightForeground": "[White]60",
+    "editorOverviewRuler.warningForeground": "[Warning]80",
+    "editorOverviewRuler.wordHighlightForeground": "[White]60",
+    "editorOverviewRuler.wordHighlightStrongForeground": "[White]60",
+    "editorPane.background": "[Black -1]",
+    "editorRuler.foreground": "[White -2]",
+    "editorSuggestWidget.background": "[Black -1]",
+    "editorSuggestWidget.border": "[Black +2]",
+    "editorSuggestWidget.focusHighlightForeground": "[Accent]",
+    "editorSuggestWidget.foreground": "[White -2]",
+    "editorSuggestWidget.highlightForeground": "[Accent]",
+    "editorSuggestWidget.selectedBackground": "[Black]",
+    "editorSuggestWidget.selectedForeground": "[White]",
+    "editorSuggestWidget.selectedIconForeground": "[White]",
     "editorUnnecessaryCode.border": "#0000",
-    "editorUnnecessaryCode.opacity": "Black +3",
-    "editorWarning.foreground": "Warning",
-    "editorWhitespace.foreground": "Black +3",
-    "editorWidget.background": "Black -1",
-    "editorWidget.border": "Accent",
-    "editorWidget.foreground": "White -2",
-    "errorForeground": "Error",
-    "extensionBadge.remoteBackground": "Accent",
-    "extensionBadge.remoteForeground": "White",
-    "extensionButton.prominentBackground": "Accent",
-    "extensionButton.prominentForeground": "White",
+    "editorUnnecessaryCode.opacity": "[Black +3]",
+    "editorWarning.foreground": "[Warning]",
+    "editorWhitespace.foreground": "[Black +3]",
+    "editorWidget.background": "[Black -1]",
+    "editorWidget.border": "[Accent]",
+    "editorWidget.foreground": "[White -2]",
+    "errorForeground": "[Error]",
+    "extensionBadge.remoteBackground": "[Accent]",
+    "extensionBadge.remoteForeground": "[White]",
+    "extensionButton.prominentBackground": "[Accent]",
+    "extensionButton.prominentForeground": "[White]",
     "extensionButton.prominentHoverBackground": "#0d8bf2",
-    "extensionIcon.starForeground": "White -2",
+    "extensionIcon.starForeground": "[White -2]",
     "focusBorder": "#0000",
-    "foreground": "White -2",
-    "gitDecoration.addedResourceForeground": "Added",
-    "gitDecoration.conflictingResourceForeground": "Red",
-    "gitDecoration.deletedResourceForeground": "Red",
-    "gitDecoration.ignoredResourceForeground": "Black +4",
-    "gitDecoration.modifiedResourceForeground": "Modified",
-    "gitDecoration.renamedResourceForeground": "Yellow",
-    "gitDecoration.stageDeletedResourceForeground": "Red",
-    "gitDecoration.stageModifiedResourceForeground": "Modified",
-    "gitDecoration.submoduleResourceForeground": "White",
-    "gitDecoration.untrackedResourceForeground": "Green",
-    "icon.foreground": "White -2",
-    "inlineTitleBar.background": "Black -1",
-    "input.border": "Black -1",
-    "input.background": "Black -1",
-    "input.foreground": "White -2",
-    "input.placeholderForeground": "Black +4",
-    "inputOption.activeBackground": "Accent",
+    "foreground": "[White -2]",
+    "gitDecoration.addedResourceForeground": "[Added]",
+    "gitDecoration.conflictingResourceForeground": "[Red]",
+    "gitDecoration.deletedResourceForeground": "[Red]",
+    "gitDecoration.ignoredResourceForeground": "[Black +4]",
+    "gitDecoration.modifiedResourceForeground": "[Modified]",
+    "gitDecoration.renamedResourceForeground": "[Yellow]",
+    "gitDecoration.stageDeletedResourceForeground": "[Red]",
+    "gitDecoration.stageModifiedResourceForeground": "[Modified]",
+    "gitDecoration.submoduleResourceForeground": "[White]",
+    "gitDecoration.untrackedResourceForeground": "[Green]",
+    "icon.foreground": "[White -2]",
+    "inlineTitleBar.background": "[Black -1]",
+    "input.border": "[Black -1]",
+    "input.background": "[Black -1]",
+    "input.foreground": "[White -2]",
+    "input.placeholderForeground": "[Black +4]",
+    "inputOption.activeBackground": "[Accent]",
     "inputOption.activeBorder": "#0000",
-    "inputOption.activeForeground": "White",
-    "inputValidation.errorBackground": "Error",
-    "inputValidation.errorBorder": "Error",
-    "inputValidation.errorForeground": "Black",
-    "inputValidation.infoBackground": "Accent",
-    "inputValidation.infoBorder": "Accent",
-    "inputValidation.infoForeground": "White",
-    "inputValidation.warningBackground": "Warning",
-    "inputValidation.warningBorder": "Warning",
-    "inputValidation.warningForeground": "Black",
-    "interactive.activeCodeBorder": "Black +2",
+    "inputOption.activeForeground": "[White]",
+    "inputValidation.errorBackground": "[Error]",
+    "inputValidation.errorBorder": "[Error]",
+    "inputValidation.errorForeground": "[Black]",
+    "inputValidation.infoBackground": "[Accent]",
+    "inputValidation.infoBorder": "[Accent]",
+    "inputValidation.infoForeground": "[White]",
+    "inputValidation.warningBackground": "[Warning]",
+    "inputValidation.warningBorder": "[Warning]",
+    "inputValidation.warningForeground": "[Black]",
+    "interactive.activeCodeBorder": "[Black +2]",
     "interactive.inactiveCodeBorder": "#0000",
-    "keybindingLabel.background": "Black +2",
-    "keybindingLabel.border": "Black +2",
+    "keybindingLabel.background": "[Black +2]",
+    "keybindingLabel.border": "[Black +2]",
     "keybindingLabel.bottomBorder": "#0000",
-    "keybindingLabel.foreground": "White -2",
-    "list.activeSelectionBackground": "Saturated White20",
-    "list.activeSelectionForeground": "White",
-    "list.activeSelectionIconForeground": "White",
-    "list.deemphasizedForeground": "Black +4",
-    "list.dropBackground": "Black +340",
-    "list.errorForeground": "Error",
-    "list.filterMatchBackground": "Saturated White10",
+    "keybindingLabel.foreground": "[White -2]",
+    "list.activeSelectionBackground": "[White]20",
+    "list.activeSelectionForeground": "[White]",
+    "list.activeSelectionIconForeground": "[White]",
+    "list.deemphasizedForeground": "[Black +4]",
+    "list.dropBackground": "[Black +3]40",
+    "list.errorForeground": "[Error]",
+    "list.filterMatchBackground": "[White]10",
     "list.filterMatchBorder": "#0000",
-    "list.focusBackground": "Saturated White10",
-    "list.focusForeground": "White",
-    "list.focusHighlightForeground": "Accent",
+    "list.focusBackground": "[White]10",
+    "list.focusForeground": "[White]",
+    "list.focusHighlightForeground": "[Accent]",
     "list.focusOutline": "#0000",
-    "list.highlightForeground": "Accent",
-    "list.hoverBackground": "Saturated White10",
+    "list.highlightForeground": "[Accent]",
+    "list.hoverBackground": "[White]10",
     "list.hoverForeground": "#fff",
     "list.inactiveSelectionBackground": "#0000",
-    "list.invalidItemForeground": "Orange",
-    "list.warningForeground": "Warning",
-    "listFilterWidget.background": "Saturated White10",
-    "listFilterWidget.noMatchesOutline": "Red60",
+    "list.invalidItemForeground": "[Orange]",
+    "list.warningForeground": "[Warning]",
+    "listFilterWidget.background": "[White]10",
+    "listFilterWidget.noMatchesOutline": "[Red]60",
     "listFilterWidget.outline": "#0000",
-    "menu.background": "Black -1",
-    "menu.border": "Black +2",
-    "menu.foreground": "White -2",
-    "menu.selectionBackground": "Black",
-    "menu.selectionBorder": "Black",
-    "menu.selectionForeground": "White",
-    "menu.separatorBackground": "Black +3",
-    "menubar.selectionBackground": "Black",
+    "menu.background": "[Black -1]",
+    "menu.border": "[Black +2]",
+    "menu.foreground": "[White -2]",
+    "menu.selectionBackground": "[Black]",
+    "menu.selectionBorder": "[Black]",
+    "menu.selectionForeground": "[White]",
+    "menu.separatorBackground": "[Black +3]",
+    "menubar.selectionBackground": "[Black]",
     "menubar.selectionBorder": "#0000",
-    "menubar.selectionForeground": "White",
-    "merge.commonContentBackground": "White -226",
-    "merge.commonHeaderBackground": "White -266",
-    "merge.currentContentBackground": "Cyan33",
-    "merge.currentHeaderBackground": "Cyan80",
-    "merge.incomingContentBackground": "Blue33",
-    "merge.incomingHeaderBackground": "Blue80",
-    "minimap.background": "Black",
-    "minimap.errorHighlight": "Error40",
-    "minimap.findMatchHighlight": "Saturated White40",
-    "minimap.selectionHighlight": "Saturated White20",
-    "minimap.warningHighlight": "Warning80",
-    "minimapGutter.addedBackground": "Added80",
-    "minimapGutter.deletedBackground": "Red80",
-    "minimapGutter.modifiedBackground": "Modified80",
-    "minimapSlider.activeBackground": "Saturated White2B",
-    "minimapSlider.background": "Saturated White21",
-    "minimapSlider.hoverBackground": "Saturated White26",
+    "menubar.selectionForeground": "[White]",
+    "merge.commonContentBackground": "[White -2]26",
+    "merge.commonHeaderBackground": "[White -2]66",
+    "merge.currentContentBackground": "[Cyan]33",
+    "merge.currentHeaderBackground": "[Cyan]80",
+    "merge.incomingContentBackground": "[Blue]33",
+    "merge.incomingHeaderBackground": "[Blue]80",
+    "minimap.background": "[Black]",
+    "minimap.errorHighlight": "[Error]40",
+    "minimap.findMatchHighlight": "[White]40",
+    "minimap.selectionHighlight": "[White]20",
+    "minimap.warningHighlight": "[Warning]80",
+    "minimapGutter.addedBackground": "[Added]80",
+    "minimapGutter.deletedBackground": "[Red]80",
+    "minimapGutter.modifiedBackground": "[Modified]80",
+    "minimapSlider.activeBackground": "[White]2B",
+    "minimapSlider.background": "[White]21",
+    "minimapSlider.hoverBackground": "[White]26",
     "notebook.cellBorderColor": "#0000",
-    "notebook.cellEditorBackground": "White -20d",
+    "notebook.cellEditorBackground": "[White -2]0d",
     "notebook.cellHoverBackground": "#0000",
     "notebook.cellInsertionIndicator": "#0000",
-    "notebook.cellStatusBarItemHoverBackground": "Saturated White40",
-    "notebook.cellToolbarSeparator": "Saturated White59",
+    "notebook.cellStatusBarItemHoverBackground": "[White]40",
+    "notebook.cellToolbarSeparator": "[White]59",
     "notebook.focusedCellBackground": "#0000",
     "notebook.focusedCellBorder": "#0000",
     "notebook.focusedEditorBorder": "#0000",
@@ -919,239 +913,238 @@
     "notebook.inactiveSelectedCellBorder": "#0000",
     "notebook.selectedCellBackground": "#0000",
     "notebook.selectedCellBorder": "#0000",
-    "notebook.symbolHighlightBackground": "Saturated White0D",
-    "notebookScrollbarSlider.activeBackground": "Saturated White60",
-    "notebookScrollbarSlider.background": "Saturated White40",
-    "notebookScrollbarSlider.hoverBackground": "Saturated White50",
-    "notebookStatusErrorIcon.foreground": "Error",
-    "notebookStatusRunningIcon.foreground": "White",
-    "notebookStatusSuccessIcon.foreground": "Green",
-    "notificationCenter.border": "Black +2",
-    "notificationCenterHeader.background": "Black -1",
-    "notificationCenterHeader.foreground": "White -2",
-    "notificationLink.foreground": "Blueb6",
-    "notifications.background": "Black -1",
-    "notifications.border": "Black +2",
-    "notifications.foreground": "White -2",
-    "notificationsErrorIcon.foreground": "Error",
-    "notificationsInfoIcon.foreground": "Blue",
-    "notificationsWarningIcon.foreground": "Warning",
-    "panel.background": "Black",
-    "panel.border": "Black +2",
+    "notebook.symbolHighlightBackground": "[White]0D",
+    "notebookScrollbarSlider.activeBackground": "[White]60",
+    "notebookScrollbarSlider.background": "[White]40",
+    "notebookScrollbarSlider.hoverBackground": "[White]50",
+    "notebookStatusErrorIcon.foreground": "[Error]",
+    "notebookStatusRunningIcon.foreground": "[White]",
+    "notebookStatusSuccessIcon.foreground": "[Green]",
+    "notificationCenter.border": "[Black +2]",
+    "notificationCenterHeader.background": "[Black -1]",
+    "notificationCenterHeader.foreground": "[White -2]",
+    "notificationLink.foreground": "[Blue]b6",
+    "notifications.background": "[Black -1]",
+    "notifications.border": "[Black +2]",
+    "notifications.foreground": "[White -2]",
+    "notificationsErrorIcon.foreground": "[Error]",
+    "notificationsInfoIcon.foreground": "[Blue]",
+    "notificationsWarningIcon.foreground": "[Warning]",
+    "panel.background": "[Black]",
+    "panel.border": "[Black +2]",
     "panel.dropBorder": "#0000",
-    "panelInput.border": "Black",
-    "panelSection.border": "Black +2",
-    "panelSection.dropBackground": "Black",
-    "panelSectionHeader.background": "Black",
-    "panelSectionHeader.foreground": "White -2",
-    "panelTitle.activeBorder": "White",
-    "panelTitle.activeForeground": "White",
-    "panelTitle.inactiveForeground": "White -2",
-    "peekView.border": "Black +2",
-    "peekViewEditor.background": "Black",
-    "peekViewEditor.matchHighlightBackground": "Black +2",
+    "panelInput.border": "[Black]",
+    "panelSection.border": "[Black +2]",
+    "panelSection.dropBackground": "[Black]",
+    "panelSectionHeader.background": "[Black]",
+    "panelSectionHeader.foreground": "[White -2]",
+    "panelTitle.activeBorder": "[White]",
+    "panelTitle.activeForeground": "[White]",
+    "panelTitle.inactiveForeground": "[White -2]",
+    "peekView.border": "[Black +2]",
+    "peekViewEditor.background": "[Black]",
+    "peekViewEditor.matchHighlightBackground": "[Black +2]",
     "peekViewEditor.matchHighlightBorder": "#0000",
-    "peekViewEditorGutter.background": "Black",
-    "peekViewResult.background": "Black -1",
-    "peekViewResult.fileForeground": "White",
-    "peekViewResult.lineForeground": "White -2",
-    "peekViewResult.matchHighlightBackground": "Black +2",
-    "peekViewResult.selectionBackground": "Black",
-    "peekViewResult.selectionForeground": "White",
-    "peekViewTitle.background": "Black -1",
-    "peekViewTitleDescription.foreground": "Black +4",
-    "peekViewTitleLabel.foreground": "White",
-    "pickerGroup.border": "Black +2",
-    "pickerGroup.foreground": "White -2",
+    "peekViewEditorGutter.background": "[Black]",
+    "peekViewResult.background": "[Black -1]",
+    "peekViewResult.fileForeground": "[White]",
+    "peekViewResult.lineForeground": "[White -2]",
+    "peekViewResult.matchHighlightBackground": "[Black +2]",
+    "peekViewResult.selectionBackground": "[Black]",
+    "peekViewResult.selectionForeground": "[White]",
+    "peekViewTitle.background": "[Black -1]",
+    "peekViewTitleDescription.foreground": "[Black +4]",
+    "peekViewTitleLabel.foreground": "[White]",
+    "pickerGroup.border": "[Black +2]",
+    "pickerGroup.foreground": "[White -2]",
     "ports.iconRunningProcessForeground": "#0000",
-    "problemsErrorIcon.foreground": "Error",
-    "problemsInfoIcon.foreground": "Blue",
-    "problemsWarningIcon.foreground": "Warning",
-    "progressBar.background": "Accent",
-    "quickInput.background": "Black -1",
-    "quickInput.foreground": "White -2",
-    "quickInputList.focusBackground": "Black",
-    "quickInputList.focusForeground": "White",
-    "quickInputList.focusIconForeground": "White",
-    "quickInputTitle.background": "Black",
+    "problemsErrorIcon.foreground": "[Error]",
+    "problemsInfoIcon.foreground": "[Blue]",
+    "problemsWarningIcon.foreground": "[Warning]",
+    "progressBar.background": "[Accent]",
+    "quickInput.background": "[Black -1]",
+    "quickInput.foreground": "[White -2]",
+    "quickInputList.focusBackground": "[Black]",
+    "quickInputList.focusForeground": "[White]",
+    "quickInputList.focusIconForeground": "[White]",
+    "quickInputTitle.background": "[Black]",
     "sash.hoverBorder": "#0D8BF2",
-    "scm.providerBorder": "Black +2",
+    "scm.providerBorder": "[Black +2]",
     "scrollbar.shadow": "#0000",
-    "scrollbarSlider.activeBackground": "Saturated White60",
-    "scrollbarSlider.background": "Saturated White40",
-    "scrollbarSlider.hoverBackground": "Saturated White50",
-    "searchEditor.findMatchBackground": "Saturated White10",
-    "selection.background": "Saturated White10",
-    "settings.checkboxBackground": "White -220",
-    "settings.checkboxBorder": "White -240",
-    "settings.checkboxForeground": "White",
-    "settings.dropdownBackground": "Black -1",
+    "scrollbarSlider.activeBackground": "[White]60",
+    "scrollbarSlider.background": "[White]40",
+    "scrollbarSlider.hoverBackground": "[White]50",
+    "searchEditor.findMatchBackground": "[White]10",
+    "selection.background": "[White]10",
+    "settings.checkboxBackground": "[White -2]20",
+    "settings.checkboxBorder": "[White -2]40",
+    "settings.checkboxForeground": "[White]",
+    "settings.dropdownBackground": "[Black -1]",
     "settings.dropdownBorder": "#0000",
-    "settings.dropdownForeground": "White",
+    "settings.dropdownForeground": "[White]",
     "settings.dropdownListBorder": "#0000",
-    "settings.focusedRowBackground": "Black",
-    "settings.focusedRowBorder": "Black +2",
-    "settings.headerForeground": "White",
-    "settings.modifiedItemIndicator": "Modified",
-    "settings.numberInputBackground": "Black -1",
-    "settings.numberInputBorder": "Black +2",
-    "settings.numberInputForeground": "White -2",
+    "settings.focusedRowBackground": "[Black]",
+    "settings.focusedRowBorder": "[Black +2]",
+    "settings.headerForeground": "[White]",
+    "settings.modifiedItemIndicator": "[Modified]",
+    "settings.numberInputBackground": "[Black -1]",
+    "settings.numberInputBorder": "[Black +2]",
+    "settings.numberInputForeground": "[White -2]",
     "settings.rowHoverBackground": "#0000",
-    "settings.textInputBackground": "Black -1",
+    "settings.textInputBackground": "[Black -1]",
     "settings.textInputBorder": "#0000",
-    "settings.textInputForeground": "White -2",
-    "sideBar.background": "Black -1",
-    "sideBar.border": "Black +2",
-    "sideBar.dropBackground": "Black +340",
-    "sideBar.foreground": "White -2",
-    "sideBarSectionHeader.background": "Black -1",
-    "sideBarSectionHeader.border": "Black +2",
-    "sideBarSectionHeader.foreground": "White -2",
-    "sideBarTitle.foreground": "White -2",
-    "statusBar.background": "Black -1",
-    "statusBar.border": "Black +2",
-    "statusBar.debuggingBackground": "Black +1",
-    "statusBar.debuggingBorder": "Black +1",
-    "statusBar.debuggingForeground": "White -2",
-    "statusBar.foreground": "White -2",
-    "statusBar.noFolderBackground": "Black -1",
+    "settings.textInputForeground": "[White -2]",
+    "sideBar.background": "[Black -1]",
+    "sideBar.border": "[Black +2]",
+    "sideBar.dropBackground": "[Black +3]40",
+    "sideBar.foreground": "[White -2]",
+    "sideBarSectionHeader.background": "[Black -1]",
+    "sideBarSectionHeader.border": "[Black +2]",
+    "sideBarSectionHeader.foreground": "[White -2]",
+    "sideBarTitle.foreground": "[White -2]",
+    "statusBar.background": "[Black -1]",
+    "statusBar.border": "[Black +2]",
+    "statusBar.debuggingBackground": "[Black +1]",
+    "statusBar.debuggingBorder": "[Black +1]",
+    "statusBar.debuggingForeground": "[White -2]",
+    "statusBar.foreground": "[White -2]",
+    "statusBar.noFolderBackground": "[Black -1]",
     "statusBar.noFolderBorder": "#0000",
-    "statusBar.noFolderForeground": "White -2",
-    "statusBarItem.activeBackground": "Black +2",
-    "statusBarItem.errorBackground": "Error",
-    "statusBarItem.errorForeground": "Error",
-    "statusBarItem.hoverBackground": "Black +1",
-    "statusBarItem.prominentBackground": "Black -1",
-    "statusBarItem.prominentForeground": "White",
-    "statusBarItem.prominentHoverBackground": "Black +1",
+    "statusBar.noFolderForeground": "[White -2]",
+    "statusBarItem.activeBackground": "[Black +2]",
+    "statusBarItem.errorBackground": "[Error]",
+    "statusBarItem.errorForeground": "[Error]",
+    "statusBarItem.hoverBackground": "[Black +1]",
+    "statusBarItem.prominentBackground": "[Black -1]",
+    "statusBarItem.prominentForeground": "[White]",
+    "statusBarItem.prominentHoverBackground": "[Black +1]",
     "statusBarItem.remoteBackground": "#0000",
-    "statusBarItem.remoteForeground": "White",
-    "statusBarItem.warningBackground": "Warning",
-    "statusBarItem.warningForeground": "White",
-    "symbolIcon.arrayForeground": "White -2",
-    "symbolIcon.booleanForeground": "White -2",
-    "symbolIcon.classForeground": "Orange",
-    "symbolIcon.colorForeground": "White -2",
-    "symbolIcon.constantForeground": "White -2",
-    "symbolIcon.constructorForeground": "Magenta",
-    "symbolIcon.enumeratorForeground": "Orange",
-    "symbolIcon.enumeratorMemberForeground": "Blue",
-    "symbolIcon.eventForeground": "Orange",
-    "symbolIcon.fieldForeground": "Blue",
-    "symbolIcon.fileForeground": "White -2",
-    "symbolIcon.folderForeground": "White -2",
-    "symbolIcon.functionForeground": "Magenta",
-    "symbolIcon.interfaceForeground": "Blue",
-    "symbolIcon.keyForeground": "White -2",
-    "symbolIcon.keywordForeground": "White -2",
-    "symbolIcon.methodForeground": "Magenta",
-    "symbolIcon.moduleForeground": "White -2",
-    "symbolIcon.namespaceForeground": "White -2",
-    "symbolIcon.nullForeground": "White -2",
-    "symbolIcon.numberForeground": "White -2",
-    "symbolIcon.objectForeground": "White -2",
-    "symbolIcon.operatorForeground": "White -2",
-    "symbolIcon.packageForeground": "White -2",
-    "symbolIcon.propertyForeground": "White -2",
-    "symbolIcon.referenceForeground": "White -2",
-    "symbolIcon.snippetForeground": "White -2",
-    "symbolIcon.stringForeground": "White -2",
-    "symbolIcon.structForeground": "White -2",
-    "symbolIcon.textForeground": "White -2",
-    "symbolIcon.typeParameterForeground": "White -2",
-    "symbolIcon.unitForeground": "White -2",
-    "symbolIcon.variableForeground": "Blue",
-    "tab.activeBackground": "Black",
-    "tab.activeBorder": "Black",
-    "tab.activeBorderTop": "Accent",
-    "tab.activeForeground": "White -2",
-    "tab.activeModifiedBorder": "Modified",
-    "tab.border": "Black +2",
-    "tab.hoverBackground": "Black",
+    "statusBarItem.remoteForeground": "[White]",
+    "statusBarItem.warningBackground": "[Warning]",
+    "statusBarItem.warningForeground": "[White]",
+    "symbolIcon.arrayForeground": "[White -2]",
+    "symbolIcon.booleanForeground": "[White -2]",
+    "symbolIcon.classForeground": "[Orange]",
+    "symbolIcon.colorForeground": "[White -2]",
+    "symbolIcon.constantForeground": "[White -2]",
+    "symbolIcon.constructorForeground": "[Magenta]",
+    "symbolIcon.enumeratorForeground": "[Orange]",
+    "symbolIcon.enumeratorMemberForeground": "[Blue]",
+    "symbolIcon.eventForeground": "[Orange]",
+    "symbolIcon.fieldForeground": "[Blue]",
+    "symbolIcon.fileForeground": "[White -2]",
+    "symbolIcon.folderForeground": "[White -2]",
+    "symbolIcon.functionForeground": "[Magenta]",
+    "symbolIcon.interfaceForeground": "[Blue]",
+    "symbolIcon.keyForeground": "[White -2]",
+    "symbolIcon.keywordForeground": "[White -2]",
+    "symbolIcon.methodForeground": "[Magenta]",
+    "symbolIcon.moduleForeground": "[White -2]",
+    "symbolIcon.namespaceForeground": "[White -2]",
+    "symbolIcon.nullForeground": "[White -2]",
+    "symbolIcon.numberForeground": "[White -2]",
+    "symbolIcon.objectForeground": "[White -2]",
+    "symbolIcon.operatorForeground": "[White -2]",
+    "symbolIcon.packageForeground": "[White -2]",
+    "symbolIcon.propertyForeground": "[White -2]",
+    "symbolIcon.referenceForeground": "[White -2]",
+    "symbolIcon.snippetForeground": "[White -2]",
+    "symbolIcon.stringForeground": "[White -2]",
+    "symbolIcon.structForeground": "[White -2]",
+    "symbolIcon.textForeground": "[White -2]",
+    "symbolIcon.typeParameterForeground": "[White -2]",
+    "symbolIcon.unitForeground": "[White -2]",
+    "symbolIcon.variableForeground": "[Blue]",
+    "tab.activeBackground": "[Black]",
+    "tab.activeBorder": "[Black]",
+    "tab.activeBorderTop": "[Accent]",
+    "tab.activeForeground": "[White -2]",
+    "tab.activeModifiedBorder": "[Modified]",
+    "tab.border": "[Black +2]",
+    "tab.hoverBackground": "[Black]",
     "tab.hoverBorder": "#0000",
-    "tab.hoverForeground": "White -2",
-    "tab.inactiveBackground": "Black -1",
-    "tab.inactiveForeground": "White -2",
-    "tab.inactiveModifiedBorder": "Accent",
+    "tab.hoverForeground": "[White -2]",
+    "tab.inactiveBackground": "[Black -1]",
+    "tab.inactiveForeground": "[White -2]",
+    "tab.inactiveModifiedBorder": "[Accent]",
     "tab.lastPinnedBorder": "#0000",
-    "tab.unfocusedActiveBackground": "Black -1",
-    "tab.unfocusedActiveBorder": "Black",
+    "tab.unfocusedActiveBackground": "[Black -1]",
+    "tab.unfocusedActiveBorder": "[Black]",
     "tab.unfocusedActiveBorderTop": "#0000",
-    "tab.unfocusedActiveForeground": "White -2",
-    "tab.unfocusedActiveModifiedBorder": "Accent",
-    "tab.unfocusedHoverBackground": "Black",
+    "tab.unfocusedActiveForeground": "[White -2]",
+    "tab.unfocusedActiveModifiedBorder": "[Accent]",
+    "tab.unfocusedHoverBackground": "[Black]",
     "tab.unfocusedHoverBorder": "#0000",
-    "tab.unfocusedHoverForeground": "White -2",
-    "tab.unfocusedInactiveBackground": "Black -1",
-    "tab.unfocusedInactiveForeground": "White -2",
-    "tab.unfocusedInactiveModifiedBorder": "Accent66",
-    "terminal.ansiBlack": "Black",
-    "terminal.ansiBlue": "Blue",
-    "terminal.ansiBrightBlack": "White -2",
-    "terminal.ansiBrightBlue": "Blue",
-    "terminal.ansiBrightCyan": "Cyan",
-    "terminal.ansiBrightGreen": "Green",
-    "terminal.ansiBrightMagenta": "Magenta",
-    "terminal.ansiBrightRed": "Red",
-    "terminal.ansiBrightWhite": "White",
-    "terminal.ansiBrightYellow": "Yellow",
-    "terminal.ansiCyan": "Cyan",
-    "terminal.ansiGreen": "Green",
-    "terminal.ansiMagenta": "Magenta",
-    "terminal.ansiRed": "Red",
-    "terminal.ansiWhite": "White -2",
-    "terminal.ansiYellow": "Orange",
-    "terminal.background": "Black",
-    "terminal.border": "Black +2",
-    "terminal.dropBackground": "Black +340",
-    "terminal.foreground": "White -2",
-    "terminal.selectionBackground": "Saturated White10",
-    "terminal.tab.activeBorder": "Black +2",
-    "terminalCursor.background": "White",
-    "terminalCursor.foreground": "Accent",
-    "testing.iconErrored": "Error",
-    "testing.iconFailed": "Red",
-    "testing.iconPassed": "Green",
-    "testing.iconQueued": "Yellow",
-    "testing.iconSkipped": "White -2",
-    "testing.iconUnset": "White -2",
-    "testing.message.error.decorationForeground": "Error",
-    "testing.message.error.lineBackground": "Error",
-    "testing.message.hint.decorationForeground": "White -2",
+    "tab.unfocusedHoverForeground": "[White -2]",
+    "tab.unfocusedInactiveBackground": "[Black -1]",
+    "tab.unfocusedInactiveForeground": "[White -2]",
+    "tab.unfocusedInactiveModifiedBorder": "[Accent]66",
+    "terminal.ansiBlack": "[Black]",
+    "terminal.ansiBlue": "[Blue]",
+    "terminal.ansiBrightBlue": "[Blue]",
+    "terminal.ansiBrightCyan": "[Cyan]",
+    "terminal.ansiBrightGreen": "[Green]",
+    "terminal.ansiBrightMagenta": "[Magenta]",
+    "terminal.ansiBrightRed": "[Red]",
+    "terminal.ansiBrightWhite": "[White]",
+    "terminal.ansiBrightYellow": "[Yellow]",
+    "terminal.ansiCyan": "[Cyan]",
+    "terminal.ansiGreen": "[Green]",
+    "terminal.ansiMagenta": "[Magenta]",
+    "terminal.ansiRed": "[Red]",
+    "terminal.ansiWhite": "[White -2]",
+    "terminal.ansiYellow": "[Orange]",
+    "terminal.background": "[Black]",
+    "terminal.border": "[Black +2]",
+    "terminal.dropBackground": "[Black +3]40",
+    "terminal.foreground": "[White -2]",
+    "terminal.selectionBackground": "[White]10",
+    "terminal.tab.activeBorder": "[Black +2]",
+    "terminalCursor.background": "[White]",
+    "terminalCursor.foreground": "[Accent]",
+    "testing.iconErrored": "[Error]",
+    "testing.iconFailed": "[Red]",
+    "testing.iconPassed": "[Green]",
+    "testing.iconQueued": "[Yellow]",
+    "testing.iconSkipped": "[White -2]",
+    "testing.iconUnset": "[White -2]",
+    "testing.message.error.decorationForeground": "[Error]",
+    "testing.message.error.lineBackground": "[Error]",
+    "testing.message.hint.decorationForeground": "[White -2]",
     "testing.message.hint.lineBackground": "#787E8C",
-    "testing.message.info.decorationForeground": "Blue",
+    "testing.message.info.decorationForeground": "[Blue]",
     "testing.message.info.lineBackground": "#2E7CBC",
-    "testing.message.warning.decorationForeground": "Warning",
-    "testing.message.warning.lineBackground": "Warning",
-    "testing.peekBorder": "Red",
-    "testing.runAction": "Green",
-    "textBlockQuote.background": "White",
-    "textBlockQuote.border": "Black +2",
-    "textCodeBlock.background": "Black",
-    "textLink.activeForeground": "Blue",
-    "textLink.foreground": "Blueb6",
-    "textPreformat.foreground": "Yellow",
-    "textSeparator.foreground": "Saturated White60",
-    "titleBar.activeBackground": "Black -1",
-    "titleBar.activeForeground": "White -2",
-    "titleBar.border": "Black +2",
-    "titleBar.inactiveBackground": "Black -1",
-    "titleBar.inactiveForeground": "White -2",
-    "toolbar.activeBackground": "Black",
-    "toolbar.hoverBackground": "Black +1",
-    "tree.indentGuidesStroke": "Saturated White50",
-    "tree.tableColumnsBorder": "Saturated White50",
-    "walkThrough.embeddedEditorBackground": "Black",
-    "welcomePage.background": "Black",
-    "welcomePage.buttonBackground": "Accent",
+    "testing.message.warning.decorationForeground": "[Warning]",
+    "testing.message.warning.lineBackground": "[Warning]",
+    "testing.peekBorder": "[Red]",
+    "testing.runAction": "[Green]",
+    "textBlockQuote.background": "[White]",
+    "textBlockQuote.border": "[Black +2]",
+    "textCodeBlock.background": "[Black]",
+    "textLink.activeForeground": "[Blue]",
+    "textLink.foreground": "[Blue]b6",
+    "textPreformat.foreground": "[Yellow]",
+    "textSeparator.foreground": "[White]60",
+    "titleBar.activeBackground": "[Black -1]",
+    "titleBar.activeForeground": "[White -2]",
+    "titleBar.border": "[Black +2]",
+    "titleBar.inactiveBackground": "[Black -1]",
+    "titleBar.inactiveForeground": "[White -2]",
+    "toolbar.activeBackground": "[Black]",
+    "toolbar.hoverBackground": "[Black +1]",
+    "tree.indentGuidesStroke": "[White]50",
+    "tree.tableColumnsBorder": "[White]50",
+    "walkThrough.embeddedEditorBackground": "[Black]",
+    "welcomePage.background": "[Black]",
+    "welcomePage.buttonBackground": "[Accent]",
     "welcomePage.buttonHoverBackground": "#0D8BF2",
-    "welcomePage.progress.background": "Black -1",
-    "welcomePage.progress.foreground": "Accent",
-    "welcomePage.tileBackground": "Black -1",
-    "welcomePage.tileHoverBackground": "Black -1",
+    "welcomePage.progress.background": "[Black -1]",
+    "welcomePage.progress.foreground": "[Accent]",
+    "welcomePage.tileBackground": "[Black -1]",
+    "welcomePage.tileHoverBackground": "[Black -1]",
     "welcomePage.tileShadow.": "#0000",
     "widget.shadow": "#0003",
-    "window.activeBorder": "Black +2",
-    "window.inactiveBorder": "Black +2"
+    "window.activeBorder": "[Black +2]",
+    "window.inactiveBorder": "[Black +2]"
   }
 }
