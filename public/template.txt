@@ -1,46 +1,29 @@
 {
   "$schema": "vscode://schemas/color-theme",
 
-   // "[White -2]" White -2
-   // "[White]" White
-   // "[Black -1]" Black -1
-   // "[Black +1]" Black +1
-   // "[Black +2]" Black +2
-   // "[Black +3]" Black +3
-   // "[Black +4]" Black +4
-   // "[Black]" Black
-   // "[Red]" Red
-   // "[Green]" Green
-   // "[Yellow]" Yellow
-   // "[Orange]" Orange
-   // "[Blue]" Blue
-   // "[Magenta]" Magenta
-   // "[Cyan]" Cyan
-   // "[Error]" Error
-   // "[Warning]" Warning
-   // "[Modified]" Modified
-   // "[Added]" Added
-   // "[Accent]" Accent
-
   "tokenColors": [
+
     {
       "scope": "markup.italic",
       "settings": {
         "fontStyle": "italic"
       }
     },
+
     {
       "scope": "heading.2",
       "settings": {
         "fontStyle": "bold"
       }
     },
+
     {
       "scope": "markup.bold",
       "settings": {
         "fontStyle": "bold"
       }
     },
+
     {
       "scope": "variable",
       "settings": {
@@ -61,6 +44,7 @@
         "foreground": "[Magenta]"
       }
     },
+
     {
       "scope": "support.type.property-name.json",
       "settings": {
@@ -79,6 +63,7 @@
         "fontStyle": "italic"
       }
     },
+
     {
       "scope": [
         "entity.other.attribute-name.scss",
@@ -90,12 +75,14 @@
         "foreground": "[Cyan]"
       }
     },
+
     {
       "scope": "variable.other.constant",
       "settings": {
         "foreground": "[Red]"
       }
     },
+
     {
       "scope": "storage.modifier.scope",
       "settings": {
@@ -103,6 +90,7 @@
         "foreground": "[Red]"
       }
     },
+
     {
       "scope": "entity.name.tag",
       "settings": {
@@ -123,12 +111,14 @@
         "foreground": "[Orange]"
       }
     },
+
     {
       "scope": "constant.other.color",
       "settings": {
         "foreground": "[Orange]"
       }
     },
+
     {
       "scope": "entity.other.attribute-name.pseudo-class",
       "settings": {
@@ -141,12 +131,14 @@
         "foreground": "[Yellow]"
       }
     },
+
     {
       "scope": "entity.other.attribute-name.class",
       "settings": {
         "foreground": "[Orange]"
       }
     },
+
     {
       "scope": "support.constant",
       "settings": {
@@ -181,7 +173,6 @@
         "foreground": "[Blue]"
       }
     },
-
     {
       "scope": "meta.object-literal",
       "settings": {
@@ -231,63 +222,54 @@
         "foreground": "[Yellow]"
       }
     },
-
     {
       "scope": "variable.language.this",
       "settings": {
         "foreground": "[Yellow]"
       }
     },
-
     {
       "scope": "entity.name",
       "settings": {
         "foreground": "[Yellow]"
       }
     },
-
     {
       "scope": "constant.language",
       "settings": {
         "foreground": "[Yellow]"
       }
     },
-
     {
       "scope": "constant.language.null",
       "settings": {
         "foreground": "[Orange]"
       }
     },
-
     {
       "scope": "support.class",
       "settings": {
         "foreground": "[Blue]"
       }
     },
-
     {
       "scope": "markup.heading, markup.bold",
       "settings": {
         "foreground": "[Yellow]"
       }
     },
-
     {
       "scope": "markup.fenced_code.block.markdown",
       "settings": {
         "foreground": "[Blue]"
       }
     },
-
     {
       "scope": "markup.underline",
       "settings": {
         "foreground": "[Blue]"
       }
     },
-
     {
       "scope": "keyword.other.unit",
       "settings": {
@@ -295,21 +277,18 @@
         "fontStyle": ""
       }
     },
-
     {
       "scope": "support.type",
       "settings": {
         "foreground": "[Blue]"
       }
     },
-
     {
       "scope": "constant.numeric",
       "settings": {
         "foreground": "[Orange]"
       }
     },
-
     {
       "scope": "entity.other.attribute-name",
       "settings": {
@@ -317,14 +296,12 @@
         "fontStyle": "italic"
       }
     },
-
     {
       "scope": "meta.function-call.generic",
       "settings": {
         "foreground": "[Blue]"
       }
     },
-
     {
       "scope": "entity.other.attribute-name.id.",
       "settings": {
@@ -337,14 +314,12 @@
         "foreground": "[Blue]"
       }
     },
-
     {
       "scope": "constant.language.json",
       "settings": {
         "foreground": "[Orange]"
       }
     },
-
     {
       "scope": "keyword.operator",
       "settings": {
@@ -769,7 +744,7 @@
     "editorLightBulb.foreground": "[Yellow]",
     "editorLightBulbAutoFix.foreground": "[Blue]",
     "editorLineNumber.activeForeground": "[White]",
-    "editorLineNumber.foreground": "[White -2]",
+    "editorLineNumber.foreground": "[Black +4]",
     "editorLink.activeForeground": "[Blue]",
     "editorMarkerNavigation.background": "[Black -1]",
     "editorMarkerNavigationError.background": "[Error]",

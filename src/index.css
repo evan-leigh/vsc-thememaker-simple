@@ -5,8 +5,8 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+::placeholder {
+  color: #5c6370;
 }
 
 * {
@@ -15,9 +15,11 @@ html {
 
 body {
   display: grid;
-  font-size: 22px;
+  font-size: 37px;
+  max-width: 1300px;
+  margin: 0 auto;
   place-items: start;
-  background: #22252a;
+  background: #17191b;
   color: #abb1bf;
 }
 
@@ -27,7 +29,6 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  border-radius: 10px;
   background-color: darkgrey;
 }
 
@@ -39,13 +40,23 @@ a {
 button {
   padding: 10px;
   color: #d5d9e2;
+  width: 150px;
   border: none;
   background-color: #007ee5;
   font-weight: 500;
-  font-size: 0.8em;
+  font-size: 0.65em;
   border: 1px solid #333b47;
   cursor: pointer;
 }
+
+.drag-in-drop:active {
+  cursor: grabbing;
+}
+
+.drag-in-drop:hover {
+  background-color: #0000;
+}
+
 button:hover {
   background-color: #0d8bf2;
 }
@@ -61,19 +72,43 @@ a:focus {
 
 #copy {
   position: absolute;
+  bottom: 0;
+  right: 0;
   font-size: 1.2em;
   z-index: 1;
-  bottom: 0;
-  border: 1px solid #333b47;
-  right: 0;
   width: 60px;
   height: 60px;
   margin: 20px;
-  padding: 0;
-  border-radius: 0px;
+  border: 1px solid #333b47;
   background-color: #282c34;
 }
 
 .shade {
   display: none !important;
+}
+
+div[name="Assign Scopes"],
+div[name="Editor Settings"],
+div[name="Theme Details"] {
+  display: none;
+}
+
+.tab:first-child {
+  border-bottom: #282c34;
+  border-top: 1px solid #007ee5;
+  background: #282c34;
+}
+
+.scope-header {
+  width: 100%;
+}
+
+.scope-header:first-child {
+  margin-top: 0;
+}
+
+.dropzone {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #333b47;
 }
