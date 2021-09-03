@@ -8,7 +8,7 @@ export const Main = styled.main`
 `;
 
 export const EditorPreviewContainer = styled.div`
-  width: calc(100vw - 10px);
+  width: calc(100vw - 15px);
   display: grid;
   place-items: center;
 `;
@@ -36,7 +36,54 @@ export const TabArea = styled.div`
   border-top: none;
   border-bottom: none;
   margin: 0 auto;
+  margin-top: 80px;
   width: 70vw;
+`;
+
+export const StyledColorPalette = styled.form`
+  display: flex;
+  flex-direction: column;
+
+  label {
+    display: flex;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 0.65em;
+    align-items: center;
+
+    [type="text"] {
+      margin-left: auto;
+      text-transform: uppercase;
+      font-family: monospace;
+      background-color: #22252a;
+      padding: 12px;
+      color: #abb1bf;
+      border: 1px solid #333b47;
+      margin-right: 10px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  [type="color"] {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    border: 1px solid #333b47;
+    position: relative;
+    background: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--background);
+    }
+  }
 `;
 
 export const Panel = styled.div`
@@ -67,44 +114,11 @@ export const Tab = styled.a`
 `;
 
 export const Footer = styled.footer`
-  width: calc(100vw - 10px);
+  width: calc(100vw - 15px);
   border-top: 1px solid #333b47;
   transform: translateY(-1px);
   font-weight: 500;
   margin-top: 200px;
   font-size: 0.8em;
   padding: 20px 40px;
-`;
-
-export const Output = styled.pre`
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  height: 500px;
-  background: #22252a;
-  font-family: monospace;
-  overflow-y: scroll;
-  margin-top: 20px;
-  padding-left: 10px;
-  border: 1px solid #333b47;
-  font-size: 0.65em;
-  line-height: 1.65;
-  position: relative;
-
-  &&::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  &&::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    height: 70px;
-  }
-  .string {
-    color: #98c379;
-  }
-  .key {
-    color: #e06c75;
-  }
-  .comment {
-    color: red;
-  }
 `;

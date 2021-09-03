@@ -2,10 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: calc(100vw - 10px);
+  width: calc(100vw - 15px);
 `;
 
 export const Nav = styled.nav`

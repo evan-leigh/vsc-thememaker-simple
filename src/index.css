@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?amily=Fira+Mono:wght@400;500&display=swap");
 *,
 *::after,
 *::before {
@@ -15,6 +15,7 @@
 
 body {
   display: grid;
+  min-height: 100vh !important;
   font-size: 37px;
   max-width: 1300px;
   margin: 0 auto;
@@ -24,7 +25,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 10px;
+  width: 15px;
   background: #282c34;
 }
 
@@ -41,20 +42,13 @@ button {
   padding: 10px;
   color: #d5d9e2;
   width: 150px;
+  margin-right: 10px;
   border: none;
   background-color: #007ee5;
   font-weight: 500;
   font-size: 0.65em;
   border: 1px solid #333b47;
   cursor: pointer;
-}
-
-.drag-in-drop:active {
-  cursor: grabbing;
-}
-
-.drag-in-drop:hover {
-  background-color: #0000;
 }
 
 button:hover {
@@ -76,7 +70,9 @@ a:focus {
   right: 0;
   font-size: 1.2em;
   z-index: 1;
-  width: 60px;
+  width: fit-content;
+  font-size: 0.7em;
+  font-weight: 400;
   height: 60px;
   margin: 20px;
   border: 1px solid #333b47;

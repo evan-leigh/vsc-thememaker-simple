@@ -1,54 +1,9 @@
 import React, { useEffect } from "react";
 import syntaxHighlight from "../utils/sytax-highlight";
-import styled from "styled-components";
 import adjust from "../utils/adjust-color";
-import { Output } from "../index.styled";
-
-const StyledColorPalette = styled.form`
-  display: flex;
-  flex-direction: column;
-
-  label {
-    display: flex;
-    font-weight: 600;
-    margin-bottom: 10px;
-    font-size: 0.65em;
-    align-items: center;
-
-    [type="text"] {
-      margin-left: auto;
-      text-transform: uppercase;
-      font-family: monospace;
-      background-color: #22252a;
-      padding: 12px;
-      color: #abb1bf;
-      border: 1px solid #333b47;
-      margin-right: 10px;
-
-      &:focus {
-        outline: none;
-      }
-    }
-  }
-  [type="color"] {
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    border: 1px solid #333b47;
-    position: relative;
-    background: none;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--background);
-    }
-  }
-`;
+import { StyledColorPalette } from "../index.styled";
+import { VscClippy } from "react-icons/vsc";
+import { colorNames } from "./color-names";
 
 function easeInOutQuad(x) {
   return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
@@ -63,9 +18,9 @@ function handleChangeBlack(event) {
     element.style.setProperty("--background", `${element.value}`);
   });
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 1; i < 5; i++) {
     document.querySelectorAll(`.black_${i}`).forEach((element) => {
-      element.value = adjust(black.value, easeInOutQuad(i * -1));
+      element.value = adjust(black.value, easeInOutQuad(i * -1 - 1));
       element.style.setProperty("--background", `${element.value}`);
     });
   }
@@ -82,17 +37,30 @@ function handleChangeWhite(event) {
   });
 
   document.querySelectorAll(".white-dark").forEach((element) => {
-    element.value = adjust(white.value, -45);
+    element.value = adjust(white.value, -40);
     element.style.setProperty("--background", `${element.value}`);
   });
 }
 
+const HEX = /^#[0-9a-fA-F]{6}/;
+
+function handleInput(event) {
+  let icon = event.target.nextElementSibling;
+
+  if (event.target.value.length == 7 && HEX.test(event.target.value)) {
+    event.target.style.border = "1px solid #333b47";
+    icon.style.setProperty("--background", `${event.target.value}`);
+    icon.value = event.target.value;
+  } else {
+    event.target.style.border = "1px solid #ff000060";
+  }
+}
+
 function handleChange(event) {
   let input = event.target.previousSibling;
-
+  event.target.style.setProperty("--background", `${input.value}`);
+  input.style.border = "1px solid #333b47";
   input.value = event.target.value;
-
-  event.target.style.setProperty("--background", `${event.target.value}`);
 }
 
 const ColorPalatte = () => {
@@ -107,11 +75,6 @@ const ColorPalatte = () => {
       inputIcon.value = inputValue;
       inputIcon.style.setProperty("--background", `${inputValue}`);
     });
-
-    document.getElementById("copy").onclick = function () {
-      let text = document.getElementById("output").textContent;
-      navigator.clipboard.writeText(text);
-    };
   });
 
   function handleSubmit(event) {
@@ -125,28 +88,7 @@ const ColorPalatte = () => {
           document.querySelectorAll('input[type="text"]')
         );
 
-        const colorNames = [
-          "White \\-2",
-          "White",
-          "Black \\-1",
-          "Black \\+1",
-          "Black \\+2",
-          "Black \\+3",
-          "Black \\+4",
-          "Black",
-          "Red",
-          "Green",
-          "Yellow",
-          "Orange",
-          "Blue",
-          "Magenta",
-          "Cyan",
-          "Error",
-          "Warning",
-          "Modified",
-          "Added",
-          "Accent",
-        ];
+        colorNames;
 
         let userTheme = text;
 
@@ -160,22 +102,30 @@ const ColorPalatte = () => {
 
           function getScopes() {
             currentScopeList.forEach((element) => {
-              scopeString += element.textContent + ", ";
+              scopeString += '        "' + element.title + '",\n';
             });
-            return scopeString.slice(0, -2);
+            return scopeString.replace(/,\n$/, "");
           }
 
-          userTheme = userTheme.replace(
-            '"tokenColors": [',
-            '"tokenColors": [ ' +
-              "\n" +
-              "\n   {" +
-              `\n     "scope": "${getScopes()}"` +
-              '\n     "settings": {' +
-              `\n      "foreground": "[${scopeHeader[i].textContent}]"` +
-              "\n      }" +
-              "\n    },"
-          );
+          let scopeColor = scopeHeader[i].textContent;
+
+          if (currentScopeList.length == 0) {
+            null;
+          } else {
+            userTheme = userTheme.replace(
+              '"tokenColors": [',
+              '"tokenColors": [ ' +
+                "\n    {" +
+                `\n      "name": "${scopeColor}",` +
+                '\n      "scope": [' +
+                `\n${getScopes()}` +
+                "\n      ]," +
+                '\n      "settings": {' +
+                `\n        "foreground": "[${scopeColor}]"` +
+                "\n      }" +
+                "\n    },"
+            );
+          }
         }
 
         for (let i = 0; i < colorNames.length; i++) {
@@ -191,27 +141,15 @@ const ColorPalatte = () => {
     <StyledColorPalette onSubmit={handleSubmit}>
       <label className="shade">
         White -2
-        <input
-          required="required"
-          type="text"
-          onChange={handleChangeWhite}
-          onInput={handleChangeWhite}
-          defaultValue="#858992"
-          className="white-dark"
-          placeholder="#000000"
-        />
-        <input
-          type="color"
-          className="white-dark"
-          onChange={handleChangeWhite}
-        />
+        <input type="text" defaultValue="#ADB1BA" className="white-dark" />
+        <input type="color" className="white-dark" />
       </label>
       <label>
         White
         <input
           required="required"
           type="text"
-          onChange={handleChangeWhite}
+          maxLength="7"
           onInput={handleChangeWhite}
           className="white_0"
           defaultValue="#D5D9E2"
@@ -221,82 +159,38 @@ const ColorPalatte = () => {
       </label>
       <label className="shade">
         Black -1
-        <input
-          required="required"
-          type="text"
-          onChange={handleChangeBlack}
-          onInput={handleChangeBlack}
-          defaultValue="#141820"
-          className="black-dark"
-          placeholder="#000000"
-        />
-        <input
-          type="color"
-          className="black-dark"
-          onChange={handleChangeBlack}
-        />
+        <input type="text" className="black-dark" defaultValue="#23272F" />
+        <input type="color" className="black-dark" />
       </label>
       <label className="shade">
         Black +1
-        <input
-          required="required"
-          type="text"
-          onChange={handleChangeBlack}
-          onInput={handleChangeBlack}
-          className="black_1"
-          defaultValue="#353941"
-          placeholder="#000000"
-        />
-        <input type="color" className="black_1" onChange={handleChangeBlack} />
+        <input type="text" className="black_1" defaultValue="#30343C" />
+        <input type="color" className="black_1" />
       </label>
       <label className="shade">
         Black +2
-        <input
-          required="required"
-          type="text"
-          onChange={handleChangeBlack}
-          onInput={handleChangeBlack}
-          className="black_2"
-          defaultValue="#42464E"
-          placeholder="#000000"
-        />
-        <input type="color" className="black_2" onChange={handleChangeBlack} />
+        <input type="text" className="black_2" defaultValue="#3A3E46" />
+        <input type="color" className="black_2" />
       </label>
       <label className="shade">
         Black +3
-        <input
-          required="required"
-          type="text"
-          onChange={handleChangeBlack}
-          onInput={handleChangeBlack}
-          className="black_3"
-          defaultValue="#4F535B"
-          placeholder="#000000"
-        />
-        <input type="color" className="black_3" onChange={handleChangeBlack} />
+        <input type="text" className="black_3" defaultValue="#484C54" />
+        <input type="color" className="black_3" />
       </label>
       <label className="shade">
         Black +4
-        <input
-          required="required"
-          type="text"
-          onChange={handleChangeBlack}
-          onInput={handleChangeBlack}
-          className="black_4"
-          defaultValue="#83878F"
-          placeholder="#000000"
-        />
-        <input type="color" className="black_4" onChange={handleChangeBlack} />
+        <input type="text" className="black_4" defaultValue="#5A5E66" />
+        <input type="color" className="black_4" />
       </label>
       <label>
         Black
         <input
           required="required"
           type="text"
-          onChange={handleChangeBlack}
+          maxLength="7"
           onInput={handleChangeBlack}
           className="black_0"
-          defaultValue="#282c34"
+          defaultValue="#282C34"
           placeholder="#000000"
         />
         <input type="color" className="black_0" onChange={handleChangeBlack} />
@@ -308,8 +202,8 @@ const ColorPalatte = () => {
         <input
           required="required"
           type="text"
-          onChange={handleChange}
-          onInput={handleChange}
+          maxLength="7"
+          onInput={handleInput}
           defaultValue="#e06c75"
           contentEditable="true"
           placeholder="#000000"
@@ -321,8 +215,8 @@ const ColorPalatte = () => {
         <input
           required="required"
           type="text"
-          onChange={handleChange}
-          onInput={handleChange}
+          maxLength="7"
+          onInput={handleInput}
           defaultValue="#98c379"
           placeholder="#000000"
         />
@@ -333,8 +227,8 @@ const ColorPalatte = () => {
         <input
           required="required"
           type="text"
-          onChange={handleChange}
-          onInput={handleChange}
+          maxLength="7"
+          onInput={handleInput}
           defaultValue="#e5c07b"
           placeholder="#000000"
         />
@@ -345,8 +239,8 @@ const ColorPalatte = () => {
         <input
           required="required"
           type="text"
-          onChange={handleChange}
-          onInput={handleChange}
+          maxLength="7"
+          onInput={handleInput}
           defaultValue="#d19a66"
           placeholder="#000000"
         />
@@ -357,8 +251,8 @@ const ColorPalatte = () => {
         <input
           required="required"
           type="text"
-          onChange={handleChange}
-          onInput={handleChange}
+          maxLength="7"
+          onInput={handleInput}
           defaultValue="#61afef"
           placeholder="#000000"
         />
@@ -369,8 +263,8 @@ const ColorPalatte = () => {
         <input
           required="required"
           type="text"
-          onChange={handleChange}
-          onInput={handleChange}
+          maxLength="7"
+          onInput={handleInput}
           defaultValue="#c678dd"
           placeholder="#000000"
         />
@@ -381,8 +275,8 @@ const ColorPalatte = () => {
         <input
           required="required"
           type="text"
-          onChange={handleChange}
-          onInput={handleChange}
+          maxLength="7"
+          onInput={handleInput}
           defaultValue="#56b6c2"
           placeholder="#000000"
         />
@@ -395,8 +289,8 @@ const ColorPalatte = () => {
         <input
           required="required"
           type="text"
-          onChange={handleChange}
-          onInput={handleChange}
+          maxLength="7"
+          onInput={handleInput}
           defaultValue="#e06c75"
           placeholder="#000000"
         />
@@ -407,8 +301,8 @@ const ColorPalatte = () => {
         <input
           required="required"
           type="text"
-          onChange={handleChange}
-          onInput={handleChange}
+          maxLength="7"
+          onInput={handleInput}
           defaultValue="#e5c07b"
           placeholder="#000000"
         />
@@ -419,8 +313,8 @@ const ColorPalatte = () => {
         <input
           required="required"
           type="text"
-          onChange={handleChange}
-          onInput={handleChange}
+          maxLength="7"
+          onInput={handleInput}
           defaultValue="#61afef"
           placeholder="#000000"
         />
@@ -431,8 +325,8 @@ const ColorPalatte = () => {
         <input
           required="required"
           type="text"
-          onChange={handleChange}
-          onInput={handleChange}
+          maxLength="7"
+          onInput={handleInput}
           defaultValue="#98c379"
           placeholder="#000000"
         />
@@ -445,8 +339,8 @@ const ColorPalatte = () => {
         <input
           required="required"
           type="text"
-          onChange={handleChange}
-          onInput={handleChange}
+          maxLength="7"
+          onInput={handleInput}
           defaultValue="#007EE5"
           placeholder="#000000"
         />
@@ -454,14 +348,10 @@ const ColorPalatte = () => {
       </label>
       <br />
       <br />
-      <button type="submit" value="submit" readOnly>
-        Submit
-      </button>
-      <div id="json">
-        <button id="copy" type="button">
-          📋
+      <div>
+        <button type="submit" value="submit" readOnly>
+          Submit
         </button>
-        <Output id="output"></Output>
       </div>
     </StyledColorPalette>
   );

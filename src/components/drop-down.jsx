@@ -19,9 +19,12 @@ const StyledDropdown = styled.div`
 const StyledDragAndDrop = styled.button`
   background-color: transparent;
   font-family: monospace;
+  font-weight: 400;
   margin: 10px;
+  position: relative;
   border-radius: 20px;
-  padding: 5px 10px;
+  z-index: 100;
+  padding: 7px 13px;
   width: fit-content;
   color: #5c6370;
   cursor: grab;
@@ -81,9 +84,15 @@ export function onDragOver(event) {
   event.preventDefault();
 }
 
-export const DragAndDrop = ({ children }) => {
+export const DragAndDrop = ({ children, className, info, scope }) => {
   return (
-    <StyledDragAndDrop onDragStart={onDragStart} draggable>
+    <StyledDragAndDrop
+      className={className}
+      title={scope}
+      info={info}
+      onDragStart={onDragStart}
+      draggable
+    >
       {children}
     </StyledDragAndDrop>
   );

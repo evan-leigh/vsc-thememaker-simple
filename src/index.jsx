@@ -1,15 +1,8 @@
 import React from "react";
 import { Header } from "./layout/header";
+import Output from "./components/output";
 
-import {
-  EditorPreviewContainer,
-  EditorPreview,
-  Footer,
-  Panel,
-  TabArea,
-  Tab,
-  Main,
-} from "./index.styled";
+import { Footer, Panel, TabArea, Tab, Main } from "./index.styled";
 
 import "./index.css";
 
@@ -17,6 +10,7 @@ import { SiGithub } from "react-icons/si";
 
 import ColorPalatte from "./components/color-palette";
 import AssignScopes from "./components/assign-scopes";
+import EditorSettings from "./components/editor-settings";
 
 const TabRow = () => {
   function handleTabChange(event) {
@@ -50,12 +44,12 @@ const TabRow = () => {
       <Tab className="tab" onClick={handleTabChange}>
         Assign Scopes
       </Tab>
-      <Tab className="tab" onClick={handleTabChange}>
+      {/* <Tab className="tab" onClick={handleTabChange}>
         Editor Settings
       </Tab>
       <Tab className="tab" onClick={handleTabChange}>
         Theme Details
-      </Tab>
+      </Tab> */}
     </TabArea>
   );
 };
@@ -63,11 +57,11 @@ const TabRow = () => {
 function Index() {
   return (
     <Main>
-      <Header />
+      {/* <Header /> */}
 
-      <EditorPreviewContainer>
+      {/* <EditorPreviewContainer>
         <EditorPreview />
-      </EditorPreviewContainer>
+      </EditorPreviewContainer> */}
 
       <TabRow />
 
@@ -80,12 +74,14 @@ function Index() {
       </Panel>
 
       <Panel className="panel" name="Editor Settings">
-        Editor Settings
+        <EditorSettings />
       </Panel>
 
       <Panel className="panel" name="Theme Details">
         Theme Details
       </Panel>
+
+      <Output />
 
       <Footer>
         <a href="https://github.com/evan-leigh/vsc-thememaker-simple">
