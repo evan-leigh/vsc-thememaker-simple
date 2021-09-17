@@ -1,353 +1,264 @@
 import React, { useEffect } from "react";
 import syntaxHighlight from "../utils/sytax-highlight";
-import adjust from "../utils/adjust-color";
 import { StyledColorPalette } from "../index.styled";
-import { VscClippy } from "react-icons/vsc";
-import { colorNames } from "./color-names";
+import { colorNames, options, buttons } from "./color-names";
 
-function easeInOutQuad(x) {
-  return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
-}
+import ColorSwatch from "./color-swatch";
 
-function handleChangeBlack(event) {
-  let black = event.target;
-  black.previousSibling.value = black.value;
-
-  document.querySelectorAll(".black-dark").forEach((element) => {
-    element.value = adjust(black.value, -5);
-    element.style.setProperty("--background", `${element.value}`);
-  });
-
-  for (let i = 1; i < 5; i++) {
-    document.querySelectorAll(`.black_${i}`).forEach((element) => {
-      element.value = adjust(black.value, easeInOutQuad(i * -1 - 1));
-      element.style.setProperty("--background", `${element.value}`);
-    });
-  }
-}
-
-let white;
-function handleChangeWhite(event) {
-  white = event.target;
-  white.previousSibling.value = white.value;
-
-  document.querySelectorAll(".white_0").forEach((element) => {
-    element.value = white.value;
-    element.style.setProperty("--background", `${element.value}`);
-  });
-
-  document.querySelectorAll(".white-dark").forEach((element) => {
-    element.value = adjust(white.value, -40);
-    element.style.setProperty("--background", `${element.value}`);
-  });
-}
-
-const HEX = /^#[0-9a-fA-F]{6}/;
-
-function handleInput(event) {
-  let icon = event.target.nextElementSibling;
-
-  if (event.target.value.length == 7 && HEX.test(event.target.value)) {
-    event.target.style.border = "1px solid #333b47";
-    icon.style.setProperty("--background", `${event.target.value}`);
-    icon.value = event.target.value;
-  } else {
-    event.target.style.border = "1px solid #ff000060";
-  }
-}
-
-function handleChange(event) {
-  let input = event.target.previousSibling;
-  event.target.style.setProperty("--background", `${input.value}`);
-  input.style.border = "1px solid #333b47";
-  input.value = event.target.value;
-}
+const $ = document.querySelectorAll.bind(document);
 
 const ColorPalatte = () => {
-  let output = document.getElementsByTagName("pre");
-  useEffect(() => {
-    let colorIconList = Array.from(
-      document.querySelectorAll('input[type="color"]')
-    );
+  const output = document.getElementsByTagName("pre");
 
+  // TODO: Add preview that updates everytime something changes
+
+  useEffect(() => {
+    // Creates an array from every color icon
+    const colorIconList = Array.from($('input[type="color"]'));
     colorIconList.forEach((inputIcon) => {
-      let inputValue = inputIcon.previousElementSibling.value;
+      // Grabs the next sibing's value
+      const inputValue = inputIcon.nextElementSibling.value;
+
+      // Matches the color icon to the value in the HEX input
       inputIcon.value = inputValue;
+
+      // Updates the ::after pesudo element's background variable with the adjacent input's value
       inputIcon.style.setProperty("--background", `${inputValue}`);
     });
   });
 
   function handleSubmit(event) {
     event.preventDefault();
+    // Reveals the code output whos display was set to "none"
     document.getElementById("json").style.display = "inline-block";
 
     fetch("/template.txt")
       .then((response) => response.text())
       .then((text) => {
-        const inputHexValue = Array.from(
-          document.querySelectorAll('input[type="text"]')
-        );
-
-        colorNames;
-
         let userTheme = text;
 
-        let scopeList = document.querySelectorAll(".scope-list");
-        let scopeHeader = document.querySelectorAll(".scope-header");
+        const scopeList = $(".scope-list");
+        const scopeHeader = $(".scope-header");
 
         for (let i = 0; i < scopeList.length; i++) {
           let currentScopeList = scopeList[i].childNodes;
 
-          let scopeString = "";
+          let string = "";
 
-          function getScopes() {
-            currentScopeList.forEach((element) => {
-              scopeString += '        "' + element.title + '",\n';
-            });
-            return scopeString.replace(/,\n$/, "");
+          function getStyle(scope) {
+            let style = "normal";
+            scope.style.fontStyle == "" ? null : (style = "italic");
+            scope.style.fontWeight == "" ? null : (style = "bold");
+            scope.style.textDecoration == "" ? null : (style = "underline");
+            return style;
           }
 
-          let scopeColor = scopeHeader[i].textContent;
+          function getScopes() {
+            let italicString = "";
+            let boldString = "";
+            let underlineString = "";
 
-          if (currentScopeList.length == 0) {
-            null;
-          } else {
+            currentScopeList.forEach((element) => {
+              let ws = '        "';
+
+              switch (getStyle(element)) {
+                case "italic":
+                  italicString += ws + element.dataset.token + '",\n';
+                  string = string.split(ws + element.dataset.token).join("");
+                  break;
+                case "bold":
+                  boldString += ws + element.dataset.token + '",\n';
+                  string = string.split(ws + element.dataset.token).join("");
+                  break;
+                case "underline":
+                  underlineString += ws + element.dataset.token + '",\n';
+                  string = string.split(ws + element.dataset.token).join("");
+                  break;
+                case "normal":
+                  string += ws + element.dataset.token + '",\n';
+                  break;
+              }
+            });
+
+            return [string, italicString, boldString, underlineString];
+          }
+
+          let scopeColor = scopeHeader[i].dataset.color;
+
+          let style = getScopes();
+
+          function printColor(scopes, style) {
+            // Replace scope color placeholders in template.txt with the respective color and style that belongs to that scope.
             userTheme = userTheme.replace(
               '"tokenColors": [',
-              '"tokenColors": [ ' +
+              // Populates at the top of the file.
+              '"tokenColors": [' +
                 "\n    {" +
-                `\n      "name": "${scopeColor}",` +
+                `\n      "name": "${scopeColor}${
+                  style == ""
+                    ? "" // If the string is empty return nothing, else return the style with the first char capitalized.
+                    : " " + style.charAt(0).toUpperCase() + style.slice(1)
+                }",` +
                 '\n      "scope": [' +
-                `\n${getScopes()}` +
+                // FIXME: having white space added to this string would be preffered, looks better.
+                `\n${scopes.replace(/,\n$/, "")}` +
                 "\n      ]," +
                 '\n      "settings": {' +
-                `\n        "foreground": "[${scopeColor}]"` +
+                `\n        "foreground": "[${scopeColor}]",` +
+                `\n        "fontStyle": "${style}"` +
                 "\n      }" +
                 "\n    },"
             );
           }
+
+          let scopeStyle = "italic";
+          if (style[1] !== "") {
+            printColor(style[1], scopeStyle);
+          }
+
+          scopeStyle = "bold";
+          if (style[2] !== "") {
+            printColor(style[2], scopeStyle);
+          }
+
+          scopeStyle = "underline";
+          if (style[3] !== "") {
+            printColor(style[3], scopeStyle);
+          }
+
+          scopeStyle = "";
+          if (style[0] !== "") {
+            printColor(style[0], scopeStyle);
+          }
         }
+
+        const colorHexValue = Array.from($('[type="text"].color'));
+        const optionHexValue = Array.from($('[type="text"].option'));
+        const buttonHexValue = Array.from($('[type="text"].button'));
 
         for (let i = 0; i < colorNames.length; i++) {
           userTheme = userTheme.replace(
             new RegExp('"\\[' + colorNames[i] + "\\]", "g"),
-            `"${inputHexValue[i].value}`
+            `"${colorHexValue[i].value}`
           );
         }
+
+        for (let i = 0; i < options.length; i++) {
+          userTheme = userTheme.replace(
+            new RegExp('"\\[' + options[i] + "\\]", "g"),
+            `"${optionHexValue[i].value}`
+          );
+        }
+
+        for (let i = 0; i < buttons.length; i++) {
+          userTheme = userTheme.replace(
+            new RegExp('"\\[' + buttons[i] + "\\]", "g"),
+            `"${buttonHexValue[i].value}`
+          );
+        }
+
         output[0].innerHTML = syntaxHighlight(userTheme);
       });
   }
   return (
     <StyledColorPalette onSubmit={handleSubmit}>
-      <label className="shade">
-        White -2
-        <input type="text" defaultValue="#ADB1BA" className="white-dark" />
-        <input type="color" className="white-dark" />
-      </label>
-      <label>
+      <h1 style={{ width: "100%" }}>Editor</h1>
+      <ColorSwatch className="white-dark color" hex="#adb1ba">
+        White -20
+      </ColorSwatch>
+      <ColorSwatch className="white_0 color" hex="#d5d9e2">
         White
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleChangeWhite}
-          className="white_0"
-          defaultValue="#D5D9E2"
-          placeholder="#000000"
-        />
-        <input type="color" className="white_0" onChange={handleChangeWhite} />
-      </label>
-      <label className="shade">
-        Black -1
-        <input type="text" className="black-dark" defaultValue="#23272F" />
-        <input type="color" className="black-dark" />
-      </label>
-      <label className="shade">
-        Black +1
-        <input type="text" className="black_1" defaultValue="#30343C" />
-        <input type="color" className="black_1" />
-      </label>
-      <label className="shade">
-        Black +2
-        <input type="text" className="black_2" defaultValue="#3A3E46" />
-        <input type="color" className="black_2" />
-      </label>
-      <label className="shade">
-        Black +3
-        <input type="text" className="black_3" defaultValue="#484C54" />
-        <input type="color" className="black_3" />
-      </label>
-      <label className="shade">
-        Black +4
-        <input type="text" className="black_4" defaultValue="#5A5E66" />
-        <input type="color" className="black_4" />
-      </label>
-      <label>
+      </ColorSwatch>
+      <ColorSwatch className="black-dark color" hex="#23272f">
+        Black -20
+      </ColorSwatch>
+      <ColorSwatch className="black_1 color" hex="#30343c">
+        Black 10
+      </ColorSwatch>
+      <ColorSwatch className="black_2 color" hex="#3a3e46">
+        Black 20
+      </ColorSwatch>
+      <ColorSwatch className="black_3 color" hex="#484c54">
+        Black 30
+      </ColorSwatch>
+      <ColorSwatch className="black_4 color" hex="#5a5e66">
+        Black 40
+      </ColorSwatch>
+      <ColorSwatch className="black_0 color" hex="#282C34">
         Black
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleChangeBlack}
-          className="black_0"
-          defaultValue="#282C34"
-          placeholder="#000000"
-        />
-        <input type="color" className="black_0" onChange={handleChangeBlack} />
-      </label>
-      <br />
-      <br />
-      <label>
+      </ColorSwatch>
+      <h1 style={{ width: "100%" }}>Syntax Colors</h1>
+      <ColorSwatch hex="#e06c75" className="red color">
         Red
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleInput}
-          defaultValue="#e06c75"
-          contentEditable="true"
-          placeholder="#000000"
-        />
-        <input type="color" onChange={handleChange} />
-      </label>
-      <label>
+      </ColorSwatch>
+      <ColorSwatch hex="#98C379" className="green color">
         Green
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleInput}
-          defaultValue="#98c379"
-          placeholder="#000000"
-        />
-        <input type="color" onChange={handleChange} />
-      </label>
-      <label>
+      </ColorSwatch>
+      <ColorSwatch hex="#E5C07B" className="yellow color">
         Yellow
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleInput}
-          defaultValue="#e5c07b"
-          placeholder="#000000"
-        />
-        <input type="color" onChange={handleChange} />
-      </label>
-      <label>
+      </ColorSwatch>
+      <ColorSwatch hex="#D19A66" className="orange color">
         Orange
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleInput}
-          defaultValue="#d19a66"
-          placeholder="#000000"
-        />
-        <input type="color" onChange={handleChange} />
-      </label>
-      <label>
+      </ColorSwatch>
+      <ColorSwatch hex="#61AFEF" className="blue color">
         Blue
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleInput}
-          defaultValue="#61afef"
-          placeholder="#000000"
-        />
-        <input type="color" onChange={handleChange} />
-      </label>
-      <label>
+      </ColorSwatch>
+      <ColorSwatch hex="#C678DD" className="magenta color">
         Magenta
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleInput}
-          defaultValue="#c678dd"
-          placeholder="#000000"
-        />
-        <input type="color" onChange={handleChange} />
-      </label>
-      <label>
+      </ColorSwatch>
+      <ColorSwatch hex="#56B6C2" className="cyan color">
         Cyan
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleInput}
-          defaultValue="#56b6c2"
-          placeholder="#000000"
-        />
-        <input type="color" onChange={handleChange} />
-      </label>
-      <br />
-      <br />
-      <label>
+      </ColorSwatch>
+      <h1 style={{ width: "100%" }}>Source Control</h1>
+      <ColorSwatch hex="#e06c75" className="error color">
         Error
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleInput}
-          defaultValue="#e06c75"
-          placeholder="#000000"
-        />
-        <input type="color" onChange={handleChange} />
-      </label>
-      <label>
+      </ColorSwatch>
+      <ColorSwatch hex="#e5c07b" className="warning color">
         Warning
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleInput}
-          defaultValue="#e5c07b"
-          placeholder="#000000"
-        />
-        <input type="color" onChange={handleChange} />
-      </label>
-      <label htmlFor="modified">
+      </ColorSwatch>
+      <ColorSwatch hex="#61afef" className="modifed color">
         Modified
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleInput}
-          defaultValue="#61afef"
-          placeholder="#000000"
-        />
-        <input type="color" onChange={handleChange} />
-      </label>
-      <label>
+      </ColorSwatch>
+      <ColorSwatch hex="#98c379" className="added color">
         Added
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleInput}
-          defaultValue="#98c379"
-          placeholder="#000000"
-        />
-        <input type="color" onChange={handleChange} />
-      </label>
-      <br />
-      <br />
-      <label htmlFor="accent">
+      </ColorSwatch>
+      <h1 style={{ width: "100%" }}>Accent Colors</h1>
+      <ColorSwatch hex="#007EE5" className="accent color">
         Accent
-        <input
-          required="required"
-          type="text"
-          maxLength="7"
-          onInput={handleInput}
-          defaultValue="#007EE5"
-          placeholder="#000000"
-        />
-        <input type="color" onChange={handleChange} />
-      </label>
-      <br />
-      <br />
+      </ColorSwatch>
+      <h1 style={{ width: "100%" }}>Options</h1>
+      <ColorSwatch hex="#007EE5" className="cursor option">
+        Cursor
+      </ColorSwatch>
+      <ColorSwatch hex="#d5d9e2" className="cursor-text option">
+        Cursor Text
+      </ColorSwatch>
+      <ColorSwatch hex="#007EE5" className="tab-border option">
+        Tab Border
+      </ColorSwatch>
+      <ColorSwatch hex="#007EE5" className="list-highlight option">
+        List Highlight
+      </ColorSwatch>
+      <ColorSwatch hex="#b8ceff" className="find-match option">
+        Find Match
+      </ColorSwatch>
+      <ColorSwatch hex="#007EE5" className="widget-sash option">
+        Widget Sash
+      </ColorSwatch>
+      <h1 style={{ width: "100%" }}>Buttons</h1>
+      <ColorSwatch hex="#007EE5" className="primary-background button">
+        Primary Background
+      </ColorSwatch>
+      <ColorSwatch hex="#ABB1BF" className="primary-foreground button">
+        Primary Foreground
+      </ColorSwatch>
+      <ColorSwatch hex="#333b47" className="secondary-background button ">
+        Secondary Background
+      </ColorSwatch>
+      <ColorSwatch hex="#d5d9e2" className="secondary-background button ">
+        Secondary Foreground
+      </ColorSwatch>
+      <h1 style={{ width: "100%" }}></h1>
       <div>
         <button type="submit" value="submit" readOnly>
           Submit

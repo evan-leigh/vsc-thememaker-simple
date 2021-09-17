@@ -6,11 +6,13 @@ import { Footer, Panel, TabArea, Tab, Main } from "./index.styled";
 
 import "./index.css";
 
-import { SiGithub } from "react-icons/si";
+import { SiGithub, SiBuymeacoffee } from "react-icons/si";
 
 import ColorPalatte from "./components/color-palette";
 import AssignScopes from "./components/assign-scopes";
 import EditorSettings from "./components/editor-settings";
+
+// TODO: Finish active tab styling
 
 const TabRow = () => {
   function handleTabChange(event) {
@@ -18,14 +20,10 @@ const TabRow = () => {
     let panels = document.querySelectorAll(".panel");
 
     tabs.forEach((tab) => {
-      tab.style.borderTop = "1px solid #333b47";
-      tab.style.borderBottom = "1px solid #333b47";
-      tab.style.background = "#22252a";
+      tab.classList.add("active");
     });
 
-    event.target.style.borderTop = "1px solid #0d8bf2";
-    event.target.style.borderBottom = "1px solid #282c34";
-    event.target.style.background = "#282c34";
+    event.target.classList.remove("active");
 
     panels.forEach((panel) => {
       panel.style.display = "none";
@@ -44,12 +42,12 @@ const TabRow = () => {
       <Tab className="tab" onClick={handleTabChange}>
         Assign Scopes
       </Tab>
-      {/* <Tab className="tab" onClick={handleTabChange}>
+      <Tab className="tab" onClick={handleTabChange}>
         Editor Settings
       </Tab>
       <Tab className="tab" onClick={handleTabChange}>
         Theme Details
-      </Tab> */}
+      </Tab>
     </TabArea>
   );
 };
@@ -57,12 +55,6 @@ const TabRow = () => {
 function Index() {
   return (
     <Main>
-      {/* <Header /> */}
-
-      {/* <EditorPreviewContainer>
-        <EditorPreview />
-      </EditorPreviewContainer> */}
-
       <TabRow />
 
       <Panel className="panel" name="Color Palette">
@@ -87,6 +79,7 @@ function Index() {
         <a href="https://github.com/evan-leigh/vsc-thememaker-simple">
           <SiGithub />
         </a>
+        <SiBuymeacoffee />
       </Footer>
     </Main>
   );

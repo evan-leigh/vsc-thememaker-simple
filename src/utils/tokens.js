@@ -10,7 +10,10 @@ export const delimiter = ["punctuation.separator"];
 
 export const propertyName = ["support.type.property-name"];
 
-export const variableProperty = ["support.type.property-name.json"];
+export const variableProperty = [
+  "support.type.property-name.json",
+  "support.variable.property",
+].join('",\n        "');
 
 export const objectProperty = ["variable.other.object.property"];
 
@@ -20,9 +23,12 @@ export const string = [
   "string.quoted",
   "punctuation.definition.string",
   "string.template",
+  "meta.attribute-selector",
 ].join('",\n        "');
 
 export const operator = ["keyword.operator"];
+
+export const foreground = ["source"];
 
 export const htmlBrackets = ["punctuation.definition.tag"];
 

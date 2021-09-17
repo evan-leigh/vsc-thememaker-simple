@@ -4,7 +4,6 @@ import styled from "styled-components";
 const StyledOutput = styled.pre`
   overflow-x: hidden;
   text-overflow: ellipsis;
-  height: 500px;
   background: #282c34;
   font-family: monospace;
   overflow-y: scroll;
@@ -13,20 +12,10 @@ const StyledOutput = styled.pre`
   border: 1px solid #333b47;
   font-size: 0.65em;
   line-height: 1.65;
+  width: calc( 70vw - 50px );
+  height: 100vh;
   position: relative;
 
-  span {
-    margin-bottom: 20px;
-  }
-
-  &&::-webkit-scrollbar {
-    width: 15px;
-  }
-
-  &&::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    height: 70px;
-  }
   .string {
     color: #98c379;
   }
@@ -36,6 +25,24 @@ const StyledOutput = styled.pre`
   .comment {
     color: red;
   }
+
+  &&::-webkit-scrollbar {
+      width: 2em;
+      height: 2em
+  }
+
+  &&::-webkit-scrollbar-button {
+      background: #ccc
+  }
+
+  &&::-webkit-scrollbar-track-piece {
+      background: #888
+  };
+
+  &&::-webkit-scrollbar-thumb {
+      background: #eee
+  }
+
 `;
 
 const Output = () => {

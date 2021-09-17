@@ -25,64 +25,12 @@ export const EditorPreview = styled.div`
   height: 40vw;
 `;
 
-export const TabArea = styled.div`
-  display: flex;
-  overflow: hidden;
-  align-items: center;
-  text-align: center;
-  margin-right: auto;
-  background: #282c34;
-  border: 1px solid #333b47;
-  border-top: none;
-  border-bottom: none;
-  margin: 0 auto;
-  margin-top: 80px;
-  width: 70vw;
-`;
-
 export const StyledColorPalette = styled.form`
   display: flex;
-  flex-direction: column;
-
+  flex-wrap: wrap;
+  width: 100%;
   label {
-    display: flex;
-    font-weight: 600;
-    margin-bottom: 10px;
-    font-size: 0.65em;
-    align-items: center;
-
-    [type="text"] {
-      margin-left: auto;
-      text-transform: uppercase;
-      font-family: monospace;
-      background-color: #22252a;
-      padding: 12px;
-      color: #abb1bf;
-      border: 1px solid #333b47;
-      margin-right: 10px;
-
-      &:focus {
-        outline: none;
-      }
-    }
-  }
-  [type="color"] {
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    border: 1px solid #333b47;
-    position: relative;
-    background: none;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--background);
-    }
+    width: 25%;
   }
 `;
 
@@ -96,15 +44,23 @@ export const Panel = styled.div`
   width: 70vw;
 `;
 
+export const TabArea = styled.div`
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  margin-right: auto;
+  margin: 0 auto;
+  margin-top: 80px;
+  width: 70vw;
+`;
+
 export const Tab = styled.a`
   cursor: pointer;
-  background: #22252a;
-  border-right: 1px solid #333b47;
   padding: 20px 0;
   font-weight: 500;
-  border-bottom: 1px solid #333b47;
-  border-top: 1px solid #333b47;
   font-size: 0.65em;
+  background: #282c34;
   height: 100%;
   flex-grow: 1;
 
@@ -120,5 +76,7 @@ export const Footer = styled.footer`
   font-weight: 500;
   margin-top: 200px;
   font-size: 0.8em;
+  display: flex;
+  justify-content: space-between;
   padding: 20px 40px;
 `;

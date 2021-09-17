@@ -14,6 +14,8 @@ const StyledEditorSettings = styled.div`
   }
 `;
 
+// TODO: Add options for the editors apperance
+
 const EditorSettings = () => {
   return (
     <StyledEditorSettings>

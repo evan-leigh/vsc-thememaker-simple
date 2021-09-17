@@ -1,62 +1,35 @@
 import React from "react";
 import styled from "styled-components";
-import { Dropdown, onDragOver, onDrop, DragAndDrop } from "./drop-down";
+import { onDragOver, onDrop, DragAndDrop } from "./drag-and-drop";
 import * as token from "../utils/tokens";
+import ColorSwatch from "./color-swatch";
 
 const StyledAssignScopes = styled.div``;
 
-const StyledScopeHeader = styled.div`
+const StyledScopeHeader = styled.h1`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #333b47;
-  font-weight: 600;
-  font-size: 0.65em;
-  padding: 10px;
+  padding: 10px 0;
 
   &&:first-child {
     margin-top: 0;
-  }
-
-  &&.open + div {
-    min-height: 53px;
-  }
-
-  &&.closed + div {
-    min-height: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 0;
-  }
-
-  &&.open svg rect:first-child {
-    transform: rotate(90deg);
-    /* transition: all 0.3s ease; */
-    transform-origin: 50% 50%;
-  }
-
-  &&.closed svg rect:first-child {
-    /* transition: all 0.3s ease; */
-    transform: rotate(0deg);
-    transform-origin: 50% 50%;
   }
 `;
 
 const StyledScopes = styled.div`
   border: 1px solid #333b47;
+  border-radius: 4px;
   background-color: #22252a;
-  box-shadow: inset 0px 0px 0px 1px #22252a;
-  border: 20px solid #333b47;
+  padding: 10px;
   margin-bottom: 20px;
   display: block;
-  padding-bottom: 20px;
 `;
 
-const ScopeHeader = ({ children }) => {
+const ScopeHeader = ({ children, color }) => {
   return (
-    <StyledScopeHeader className="scope-header open">
+    <StyledScopeHeader data-color={color} className="scope-header open">
       {children}
-      <Dropdown />
     </StyledScopeHeader>
   );
 };
@@ -76,88 +49,119 @@ const Scopes = ({ children }) => {
 const AssignScopes = () => {
   return (
     <StyledAssignScopes>
-      <ScopeHeader>Black +4</ScopeHeader>
+      <ScopeHeader color="Black +4">
+        Black 40
+        <ColorSwatch className="black_4" hex="#5a5e66"></ColorSwatch>
+      </ScopeHeader>
+
       <Scopes>
-        <DragAndDrop scope={token.comment}>Comments</DragAndDrop>
+        <DragAndDrop token={token.comment}>Comments</DragAndDrop>
       </Scopes>
 
-      <ScopeHeader>White</ScopeHeader>
+      <ScopeHeader color="White">
+        White
+        <ColorSwatch className="white_0" hex="#d5d9e2"></ColorSwatch>
+      </ScopeHeader>
       <Scopes></Scopes>
 
-      <ScopeHeader>White -2</ScopeHeader>
+      <ScopeHeader color="White -2">
+        White 20
+        <ColorSwatch className="white-dark" hex="#ABB1BF"></ColorSwatch>
+      </ScopeHeader>
       <Scopes>
-        <DragAndDrop scope={token.brace}>Braces</DragAndDrop>
-        <DragAndDrop scope={token.embedded}>Embedded</DragAndDrop>
-        <DragAndDrop scope={token.propertyName}>Property Names</DragAndDrop>
-        <DragAndDrop scope={token.htmlBrackets}>HTML Brackets</DragAndDrop>
-        <DragAndDrop scope={token.operator}>Operators</DragAndDrop>
-        <DragAndDrop scope={token.delimiter}>Delimiters</DragAndDrop>
+        <DragAndDrop token={token.brace}>Braces</DragAndDrop>
+        <DragAndDrop token={token.embedded}>Embedded</DragAndDrop>
+        <DragAndDrop token={token.foreground}>Foreground</DragAndDrop>
+        <DragAndDrop token={token.propertyName}>Property Names</DragAndDrop>
+        <DragAndDrop token={token.htmlBrackets}>HTML Brackets</DragAndDrop>
+        <DragAndDrop token={token.operator}>Operators</DragAndDrop>
+        <DragAndDrop token={token.delimiter}>Delimiters</DragAndDrop>
       </Scopes>
 
-      <ScopeHeader>Red</ScopeHeader>
+      <ScopeHeader color="Red">
+        Red <ColorSwatch className="red" hex="#e06c75"></ColorSwatch>
+      </ScopeHeader>
       <Scopes>
-        <DragAndDrop scope={token.objectKey}>Object Keys</DragAndDrop>
-        <DragAndDrop scope={token.objectProperty}>Object Property</DragAndDrop>
-        <DragAndDrop scope={token.tag}>Tags</DragAndDrop>
-        <DragAndDrop scope={token.variableProperty}>
+        <DragAndDrop token={token.objectKey}>Object Keys</DragAndDrop>
+        <DragAndDrop token={token.objectProperty}>Object Property</DragAndDrop>
+        <DragAndDrop token={token.tag}>HTML Tags</DragAndDrop>
+        <DragAndDrop token={token.variableProperty}>
           Property Variable
         </DragAndDrop>
-        <DragAndDrop scope={token.variable}>Variables</DragAndDrop>
+        <DragAndDrop token={token.variable}>Variables</DragAndDrop>
       </Scopes>
 
-      <ScopeHeader>Green</ScopeHeader>
+      <ScopeHeader color="Green">
+        Green<ColorSwatch className="green" hex="#98C379"></ColorSwatch>
+      </ScopeHeader>
       <Scopes>
-        <DragAndDrop scope={token.string}>Strings</DragAndDrop>
+        <DragAndDrop token={token.string}>Strings</DragAndDrop>
       </Scopes>
 
-      <ScopeHeader>Yellow</ScopeHeader>
+      <ScopeHeader color="Yellow">
+        Yellow
+        <ColorSwatch hex="#E5C07B" className="yellow"></ColorSwatch>
+      </ScopeHeader>
       <Scopes>
-        <DragAndDrop scope={token.attribute}>Attributes</DragAndDrop>
-        <DragAndDrop scope={token.keywordThis}>This Keyword</DragAndDrop>
-        <DragAndDrop scope={token.variableObj}>Objects</DragAndDrop>
+        <DragAndDrop token={token.attribute}>Attributes</DragAndDrop>
+        <DragAndDrop token={token.keywordThis}>This Keyword</DragAndDrop>
+        <DragAndDrop token={token.variableObj}>Objects</DragAndDrop>
       </Scopes>
 
-      <ScopeHeader>Orange</ScopeHeader>
+      <ScopeHeader color="Orange">
+        Orange
+        <ColorSwatch hex="#D19A66" className="orange"></ColorSwatch>
+      </ScopeHeader>
+
       <Scopes>
-        <DragAndDrop scope={token.number}>Numbers</DragAndDrop>
-        <DragAndDrop scope={token.unit}>Units</DragAndDrop>
-        <DragAndDrop scope={token.color}>Color Values</DragAndDrop>
-        <DragAndDrop scope={token.selectorClass}>Class Selectors</DragAndDrop>
+        <DragAndDrop token={token.number}>Numbers</DragAndDrop>
+        <DragAndDrop token={token.unit}>Units</DragAndDrop>
+        <DragAndDrop token={token.color}>Color Values</DragAndDrop>
+        <DragAndDrop token={token.selectorClass}>Class Selectors</DragAndDrop>
       </Scopes>
 
-      <ScopeHeader>Blue</ScopeHeader>
+      <ScopeHeader color="Blue">
+        Blue
+        <ColorSwatch hex="#61AFEF" className="blue"></ColorSwatch>
+      </ScopeHeader>
       <Scopes>
-        <DragAndDrop scope={token.component}>Components</DragAndDrop>
-        <DragAndDrop scope={token.propertyValue}>Property Values</DragAndDrop>
-        <DragAndDrop scope={token.functCall}>Function Calls</DragAndDrop>
-        <DragAndDrop scope={token.escapeChar}>Escape Characters</DragAndDrop>
+        <DragAndDrop token={token.component}>Components</DragAndDrop>
+        <DragAndDrop token={token.propertyValue}>Property Values</DragAndDrop>
+        <DragAndDrop token={token.functCall}>Function Calls</DragAndDrop>
+        <DragAndDrop token={token.escapeChar}>Escape Characters</DragAndDrop>
       </Scopes>
 
-      <ScopeHeader>Magenta</ScopeHeader>
+      <ScopeHeader color="Magenta">
+        Magenta
+        <ColorSwatch hex="#C678DD" className="magenta"></ColorSwatch>
+      </ScopeHeader>
       <Scopes>
-        <DragAndDrop scope={token.keyword}>Keywords</DragAndDrop>
-        <DragAndDrop scope={token.keywordFunction}>
+        <DragAndDrop token={token.keyword}>Keywords</DragAndDrop>
+        <DragAndDrop token={token.keywordFunction}>
           Function Keyword
         </DragAndDrop>
-        <DragAndDrop scope={token.operatorLogical}>
+        <DragAndDrop token={token.operatorLogical}>
           Logical Operators
         </DragAndDrop>
-        <DragAndDrop scope={token.dataType}>Data Types</DragAndDrop>
-        <DragAndDrop scope={token.keywordImportant}>
+        <DragAndDrop token={token.dataType}>Data Types</DragAndDrop>
+        <DragAndDrop token={token.keywordImportant}>
           Important Keyword
         </DragAndDrop>
-        <DragAndDrop scope={token.keywordAtRule}>At Rule Keyword</DragAndDrop>
+        <DragAndDrop token={token.keywordAtRule}>At Rule Keyword</DragAndDrop>
       </Scopes>
 
-      <ScopeHeader>Cyan</ScopeHeader>
+      <ScopeHeader color="Cyan">
+        Cyan
+        <ColorSwatch hex="#56B6C2" className="cyan"></ColorSwatch>
+      </ScopeHeader>
       <Scopes>
-        <DragAndDrop scope={token.supportConst}>
+        <DragAndDrop token={token.supportConst}>
           Constant Properties
         </DragAndDrop>
-        <DragAndDrop scope={token.templateExp}>Template Expression</DragAndDrop>
-        <DragAndDrop scope={token.constant}>Constants</DragAndDrop>
-        <DragAndDrop scope={token.selectorId}>ID Selectors</DragAndDrop>
-        <DragAndDrop scope={token.boolean}>Booleans</DragAndDrop>
+        <DragAndDrop token={token.templateExp}>Template Expression</DragAndDrop>
+        <DragAndDrop token={token.constant}>Constants</DragAndDrop>
+        <DragAndDrop token={token.selectorId}>ID Selectors</DragAndDrop>
+        <DragAndDrop token={token.boolean}>Booleans</DragAndDrop>
       </Scopes>
     </StyledAssignScopes>
   );

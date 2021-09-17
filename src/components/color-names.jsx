@@ -20,3 +20,19 @@ export const colorNames = [
   "Added",
   "Accent",
 ];
+
+export const options = [
+  "Cursor Color",
+  "Cursor Text",
+  "Tab Border",
+  "List Highlight",
+  "Find Match",
+  "Widget Sash",
+];
+
+export const buttons = [
+  "Primary Background",
+  "Primary Foreground",
+  "Secondary Background",
+  "Secondary Foreground",
+];
