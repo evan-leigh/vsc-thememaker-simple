@@ -2,17 +2,15 @@ import React from "react";
 import { Header } from "./layout/header";
 import Output from "./components/output";
 
-import { Footer, Panel, TabArea, Tab, Main } from "./index.styled";
-
 import "./index.css";
 
-import { SiGithub, SiBuymeacoffee } from "react-icons/si";
+import { Footer, Panel, TabArea, Tab, Main } from "./index.styled";
 
 import ColorPalatte from "./components/color-palette";
 import AssignScopes from "./components/assign-scopes";
 import EditorSettings from "./components/editor-settings";
 
-// TODO: Finish active tab styling
+import { SiGithub, SiBuymeacoffee } from "react-icons/si";
 
 const TabRow = () => {
   function handleTabChange(event) {
@@ -20,23 +18,21 @@ const TabRow = () => {
     let panels = document.querySelectorAll(".panel");
 
     tabs.forEach((tab) => {
-      tab.classList.add("active");
+      tab.classList.remove("active");
     });
 
-    event.target.classList.remove("active");
+    event.target.classList.add("active");
 
     panels.forEach((panel) => {
       panel.style.display = "none";
     });
 
-    document.querySelector(
-      `[name="${event.target.textContent}"]`
-    ).style.display = "inline-block";
+    document.querySelector(`[name="${event.target.textContent}"]`).style.display = "inline-block";
   }
 
   return (
     <TabArea>
-      <Tab className="tab" onClick={handleTabChange}>
+      <Tab className="tab active" onClick={handleTabChange}>
         Color Palette
       </Tab>
       <Tab className="tab" onClick={handleTabChange}>
@@ -44,9 +40,6 @@ const TabRow = () => {
       </Tab>
       <Tab className="tab" onClick={handleTabChange}>
         Editor Settings
-      </Tab>
-      <Tab className="tab" onClick={handleTabChange}>
-        Theme Details
       </Tab>
     </TabArea>
   );

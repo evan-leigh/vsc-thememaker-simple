@@ -56,7 +56,7 @@ export const FontStyle = styled.div`
   pointer-events: none;
   background-color: #22252a;
 
-  svg {
+  svg map {
     padding: 5px;
     border-radius: 5px;
     width: 30%;
@@ -89,8 +89,7 @@ export const DragAndDrop = ({ children, className, token }) => {
   useEffect(() => {
     $(".drag-and-drop").forEach((element) => {
       element.addEventListener("mouseover", () => {
-        element.childNodes[0].style.animation =
-          "fade-in 0.1s ease 0.4s forwards";
+        element.childNodes[0].style.animation = "fade-in 0.1s ease 0.4s forwards";
       });
       element.childNodes[0].addEventListener("mouseout", () => {
         element.childNodes[0].style.animation = "fade-out 0.0s";
@@ -110,9 +109,7 @@ export const DragAndDrop = ({ children, className, token }) => {
     button.removeProperty("font-weight");
     button.removeProperty("text-decoration");
 
-    event.target.style.background == "rgb(229, 192, 123)"
-      ? removeStyles()
-      : transformButton();
+    event.target.style.background == "rgb(229, 192, 123)" ? removeStyles() : transformButton();
 
     function removeStyles() {
       event.target.style.removeProperty("background");

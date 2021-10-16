@@ -30,7 +30,13 @@ export const operator = ["keyword.operator"];
 
 export const foreground = ["source"];
 
+export const keywordNull = ["constant.language.null"];
+
 export const htmlBrackets = ["punctuation.definition.tag"];
+
+export const brackets = ["punctuation.definition.attribute-selector"];
+
+export const puncuation = ["punctuation.accessor"];
 
 export const operatorLogical = ["keyword.operator.logical"];
 
@@ -89,6 +95,8 @@ export const functCall = ["entity.name.function", "support.function.misc"].join(
   '",\n        "'
 );
 
+export const keywordImportAll = ["constant.language.import-export-all"];
+
 export const dataType = ["storage.type"];
 
 export const propertyValue = ["support.constant.property-value"];
@@ -116,4 +124,6 @@ export const variable = ["meta.definition.variable", "variable"].join(
 
 export const variableObj = ["variable.other.object"];
 
-export const keyword = ["keyword.control"];
+export const keyword = ["keyword.control", "keyword.operator.new"].join(
+  '",\n        "'
+);

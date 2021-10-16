@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?amily=Fira+Mono:wght@400;500&display=swap");
 *,
 *::after,
 *::before {
@@ -19,6 +18,31 @@ body {
   margin: 0 auto;
   background: #17191b;
   color: #abb1bf;
+}
+
+/* width */
+body::-webkit-scrollbar {
+  width: 20px;
+  box-sizing: content-box;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #17191b;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #b8ceff60;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #b8ceff80;
+  background-clip: content-box;
 }
 
 a {
@@ -99,4 +123,14 @@ div[name="Theme Details"] {
 .swatch {
   border: 1px solid #333b47;
   border-radius: 9px;
+}
+
+.tab {
+  border-top: 1px solid #0000;
+  background: #22252a;
+}
+
+.active {
+  border-top: 1px solid #007ee5;
+  background: #282c34;
 }

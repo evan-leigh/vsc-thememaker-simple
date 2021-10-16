@@ -10,11 +10,10 @@ const $ = document.querySelectorAll.bind(document);
 const ColorPalatte = () => {
   const output = document.getElementsByTagName("pre");
 
-  // TODO: Add preview that updates everytime something changes
-
   useEffect(() => {
     // Creates an array from every color icon
     const colorIconList = Array.from($('input[type="color"]'));
+
     colorIconList.forEach((inputIcon) => {
       // Grabs the next sibing's value
       const inputValue = inputIcon.nextElementSibling.value;
@@ -30,7 +29,6 @@ const ColorPalatte = () => {
   function handleSubmit(event) {
     event.preventDefault();
     // Reveals the code output whos display was set to "none"
-    document.getElementById("json").style.display = "inline-block";
 
     fetch("/template.txt")
       .then((response) => response.text())
@@ -101,6 +99,7 @@ const ColorPalatte = () => {
                 }",` +
                 '\n      "scope": [' +
                 // FIXME: having white space added to this string would be preffered, looks better.
+                // FIXME: having white space added to this string would be preffered, looks better.
                 `\n${scopes.replace(/,\n$/, "")}` +
                 "\n      ]," +
                 '\n      "settings": {' +
@@ -137,24 +136,15 @@ const ColorPalatte = () => {
         const buttonHexValue = Array.from($('[type="text"].button'));
 
         for (let i = 0; i < colorNames.length; i++) {
-          userTheme = userTheme.replace(
-            new RegExp('"\\[' + colorNames[i] + "\\]", "g"),
-            `"${colorHexValue[i].value}`
-          );
+          userTheme = userTheme.replace(new RegExp('"\\[' + colorNames[i] + "\\]", "g"), `"${colorHexValue[i].value}`);
         }
 
         for (let i = 0; i < options.length; i++) {
-          userTheme = userTheme.replace(
-            new RegExp('"\\[' + options[i] + "\\]", "g"),
-            `"${optionHexValue[i].value}`
-          );
+          userTheme = userTheme.replace(new RegExp('"\\[' + options[i] + "\\]", "g"), `"${optionHexValue[i].value}`);
         }
 
         for (let i = 0; i < buttons.length; i++) {
-          userTheme = userTheme.replace(
-            new RegExp('"\\[' + buttons[i] + "\\]", "g"),
-            `"${buttonHexValue[i].value}`
-          );
+          userTheme = userTheme.replace(new RegExp('"\\[' + buttons[i] + "\\]", "g"), `"${buttonHexValue[i].value}`);
         }
 
         output[0].innerHTML = syntaxHighlight(userTheme);
@@ -163,101 +153,132 @@ const ColorPalatte = () => {
   return (
     <StyledColorPalette onSubmit={handleSubmit}>
       <h1 style={{ width: "100%" }}>Editor</h1>
+
       <ColorSwatch className="white-dark color" hex="#adb1ba">
         White -20
       </ColorSwatch>
+
       <ColorSwatch className="white_0 color" hex="#d5d9e2">
         White
       </ColorSwatch>
+
       <ColorSwatch className="black-dark color" hex="#23272f">
         Black -20
       </ColorSwatch>
+
       <ColorSwatch className="black_1 color" hex="#30343c">
         Black 10
       </ColorSwatch>
+
       <ColorSwatch className="black_2 color" hex="#3a3e46">
         Black 20
       </ColorSwatch>
+
       <ColorSwatch className="black_3 color" hex="#484c54">
         Black 30
       </ColorSwatch>
+
       <ColorSwatch className="black_4 color" hex="#5a5e66">
         Black 40
       </ColorSwatch>
+
       <ColorSwatch className="black_0 color" hex="#282C34">
         Black
       </ColorSwatch>
+
       <h1 style={{ width: "100%" }}>Syntax Colors</h1>
       <ColorSwatch hex="#e06c75" className="red color">
         Red
       </ColorSwatch>
+
       <ColorSwatch hex="#98C379" className="green color">
         Green
       </ColorSwatch>
+
       <ColorSwatch hex="#E5C07B" className="yellow color">
         Yellow
       </ColorSwatch>
+
       <ColorSwatch hex="#D19A66" className="orange color">
         Orange
       </ColorSwatch>
+
       <ColorSwatch hex="#61AFEF" className="blue color">
         Blue
       </ColorSwatch>
+
       <ColorSwatch hex="#C678DD" className="magenta color">
         Magenta
       </ColorSwatch>
+
       <ColorSwatch hex="#56B6C2" className="cyan color">
         Cyan
       </ColorSwatch>
+
       <h1 style={{ width: "100%" }}>Source Control</h1>
       <ColorSwatch hex="#e06c75" className="error color">
         Error
       </ColorSwatch>
+
       <ColorSwatch hex="#e5c07b" className="warning color">
         Warning
       </ColorSwatch>
+
       <ColorSwatch hex="#61afef" className="modifed color">
         Modified
       </ColorSwatch>
+
       <ColorSwatch hex="#98c379" className="added color">
         Added
       </ColorSwatch>
+
       <h1 style={{ width: "100%" }}>Accent Colors</h1>
       <ColorSwatch hex="#007EE5" className="accent color">
         Accent
       </ColorSwatch>
+
       <h1 style={{ width: "100%" }}>Options</h1>
       <ColorSwatch hex="#007EE5" className="cursor option">
         Cursor
       </ColorSwatch>
+
       <ColorSwatch hex="#d5d9e2" className="cursor-text option">
         Cursor Text
       </ColorSwatch>
+
       <ColorSwatch hex="#007EE5" className="tab-border option">
         Tab Border
       </ColorSwatch>
+
       <ColorSwatch hex="#007EE5" className="list-highlight option">
         List Highlight
       </ColorSwatch>
+
       <ColorSwatch hex="#b8ceff" className="find-match option">
         Find Match
       </ColorSwatch>
+
       <ColorSwatch hex="#007EE5" className="widget-sash option">
         Widget Sash
       </ColorSwatch>
+
       <h1 style={{ width: "100%" }}>Buttons</h1>
       <ColorSwatch hex="#007EE5" className="primary-background button">
         Primary Background
       </ColorSwatch>
+
       <ColorSwatch hex="#ABB1BF" className="primary-foreground button">
         Primary Foreground
       </ColorSwatch>
-      <ColorSwatch hex="#333b47" className="secondary-background button ">
+
+      <ColorSwatch hex="#333b47" className="secondary-background button">
         Secondary Background
       </ColorSwatch>
-      <ColorSwatch hex="#d5d9e2" className="secondary-background button ">
+
+      <ColorSwatch hex="#d5d9e2" className="secondary-foreground button">
         Secondary Foreground
       </ColorSwatch>
+
       <h1 style={{ width: "100%" }}></h1>
       <div>
         <button type="submit" value="submit" readOnly>

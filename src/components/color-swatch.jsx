@@ -90,7 +90,7 @@ const Swatch = ({ children, hex, className }) => {
     let blackInput = $(".black_0");
     blackInput.forEach((element) => {
       let black = element;
-      element.addEventListener("change", () => {
+      element.addEventListener("input", () => {
         $(".black-dark").forEach((element) => {
           element.value = adjust(black.value, -5);
           element.style.setProperty("--background", `${element.value}`);
@@ -111,7 +111,7 @@ const Swatch = ({ children, hex, className }) => {
       let white = element;
       element.addEventListener("change", () => {
         $(".white-dark").forEach((element) => {
-          element.value = adjust(white.value, -40);
+          element.value = adjust(white.value, -30);
           element.style.setProperty("--background", `${element.value}`);
         });
       });

@@ -26,11 +26,16 @@ export const EditorPreview = styled.div`
 `;
 
 export const StyledColorPalette = styled.form`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   width: 100%;
   label {
-    width: 25%;
+    width: fit-content;
+  }
+  h1 {
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 5;
   }
 `;
 
@@ -60,7 +65,6 @@ export const Tab = styled.a`
   padding: 20px 0;
   font-weight: 500;
   font-size: 0.65em;
-  background: #282c34;
   height: 100%;
   flex-grow: 1;
 

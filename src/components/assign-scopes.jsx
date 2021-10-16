@@ -36,11 +36,7 @@ const ScopeHeader = ({ children, color }) => {
 
 const Scopes = ({ children }) => {
   return (
-    <StyledScopes
-      className="scope-list"
-      onDrop={onDrop}
-      onDragOver={onDragOver}
-    >
+    <StyledScopes className="scope-list" onDrop={onDrop} onDragOver={onDragOver}>
       {children}
     </StyledScopes>
   );
@@ -70,6 +66,7 @@ const AssignScopes = () => {
       </ScopeHeader>
       <Scopes>
         <DragAndDrop token={token.brace}>Braces</DragAndDrop>
+        <DragAndDrop token={token.brackets}>Brackets</DragAndDrop>
         <DragAndDrop token={token.embedded}>Embedded</DragAndDrop>
         <DragAndDrop token={token.foreground}>Foreground</DragAndDrop>
         <DragAndDrop token={token.propertyName}>Property Names</DragAndDrop>
@@ -84,10 +81,9 @@ const AssignScopes = () => {
       <Scopes>
         <DragAndDrop token={token.objectKey}>Object Keys</DragAndDrop>
         <DragAndDrop token={token.objectProperty}>Object Property</DragAndDrop>
+        <DragAndDrop token={token.keywordImportAll}>Import All</DragAndDrop>
         <DragAndDrop token={token.tag}>HTML Tags</DragAndDrop>
-        <DragAndDrop token={token.variableProperty}>
-          Property Variable
-        </DragAndDrop>
+        <DragAndDrop token={token.variableProperty}>Property Variable</DragAndDrop>
         <DragAndDrop token={token.variable}>Variables</DragAndDrop>
       </Scopes>
 
@@ -136,17 +132,13 @@ const AssignScopes = () => {
         <ColorSwatch hex="#C678DD" className="magenta"></ColorSwatch>
       </ScopeHeader>
       <Scopes>
+        <DragAndDrop token={token.builtIn}>Built In Methods</DragAndDrop>
         <DragAndDrop token={token.keyword}>Keywords</DragAndDrop>
-        <DragAndDrop token={token.keywordFunction}>
-          Function Keyword
-        </DragAndDrop>
-        <DragAndDrop token={token.operatorLogical}>
-          Logical Operators
-        </DragAndDrop>
+        <DragAndDrop token={token.keywordNull}>Null</DragAndDrop>
+        <DragAndDrop token={token.keywordFunction}>Function Keyword</DragAndDrop>
+        <DragAndDrop token={token.operatorLogical}>Logical Operators</DragAndDrop>
         <DragAndDrop token={token.dataType}>Data Types</DragAndDrop>
-        <DragAndDrop token={token.keywordImportant}>
-          Important Keyword
-        </DragAndDrop>
+        <DragAndDrop token={token.keywordImportant}>Important Keyword</DragAndDrop>
         <DragAndDrop token={token.keywordAtRule}>At Rule Keyword</DragAndDrop>
       </Scopes>
 
@@ -155,9 +147,7 @@ const AssignScopes = () => {
         <ColorSwatch hex="#56B6C2" className="cyan"></ColorSwatch>
       </ScopeHeader>
       <Scopes>
-        <DragAndDrop token={token.supportConst}>
-          Constant Properties
-        </DragAndDrop>
+        <DragAndDrop token={token.supportConst}>Constant Properties</DragAndDrop>
         <DragAndDrop token={token.templateExp}>Template Expression</DragAndDrop>
         <DragAndDrop token={token.constant}>Constants</DragAndDrop>
         <DragAndDrop token={token.selectorId}>ID Selectors</DragAndDrop>

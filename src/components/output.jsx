@@ -12,8 +12,8 @@ const StyledOutput = styled.pre`
   border: 1px solid #333b47;
   font-size: 0.65em;
   line-height: 1.65;
-  width: calc( 70vw - 50px );
-  height: 100vh;
+  width: 70vw;
+  height: 70vh;
   position: relative;
 
   .string {
@@ -22,27 +22,32 @@ const StyledOutput = styled.pre`
   .key {
     color: #e06c75;
   }
-  .comment {
-    color: red;
-  }
 
+  /* width */
   &&::-webkit-scrollbar {
-      width: 2em;
-      height: 2em
+    width: 20px;
+    box-sizing: content-box;
   }
 
-  &&::-webkit-scrollbar-button {
-      background: #ccc
+  /* Track */
+  &&::-webkit-scrollbar-track {
+    background: #282c34;
   }
 
-  &&::-webkit-scrollbar-track-piece {
-      background: #888
-  };
-
+  /* Handle */
   &&::-webkit-scrollbar-thumb {
-      background: #eee
+    background: #b8ceff60;
+    height: 90px;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
   }
 
+  /* Handle on hover */
+  &&::-webkit-scrollbar-thumb:hover {
+    background: #b8ceff80;
+    background-clip: content-box;
+  }
 `;
 
 const Output = () => {
@@ -50,7 +55,10 @@ const Output = () => {
     document.getElementById("copy").onclick = function () {
       let text = document.getElementById("output").textContent;
       navigator.clipboard.writeText(text);
-      setTimeout(() => {}, 900);
+      this.textContent = "Copied! ✅";
+      setTimeout(() => {
+        this.textContent = "Copy 📋";
+      }, 1000);
     };
   });
 
